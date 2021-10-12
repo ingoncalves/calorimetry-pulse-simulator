@@ -1,4 +1,4 @@
-include(gtest) # Custom module
+include(GTest) # Custom module
 
 set(BINARY ${CMAKE_PROJECT_NAME}_tst)
 
@@ -12,4 +12,4 @@ link_directories(${GTEST_LIBRARY_PATH})
 add_executable(${BINARY} ${TEST_SOURCES})
 
 add_test(NAME ${BINARY} COMMAND ${BINARY})
-target_link_libraries(${BINARY} PUBLIC ${PROJECT_NAME} ${GTEST_LIBRARY})
+target_link_libraries(${BINARY} PUBLIC ${PROJECT_NAME} ${GTEST_LIBRARY} pthread)

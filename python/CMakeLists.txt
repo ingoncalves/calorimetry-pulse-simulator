@@ -21,7 +21,7 @@ message("CMAKE_SWIG_FLAGS: ${CMAKE_SWIG_FLAGS}")
 message("Python_EXECUTABLE: ${Python_EXECUTABLE}")
 message("Python_MODULE: py${PROJECT_NAME}")
 message("Python_VERSION: ${Python_VERSION}")
-message("Python_INCLUDE_DIRS: "${Python_INCLUDE_DIRS})
+message("Python_INCLUDE_DIRS: ${Python_INCLUDE_DIRS}")
 message("Python_SITELIB: ${Python_SITELIB}")
 message("Python_LIBRARIES: ${Python_LIBRARIES}")
 

@@ -6,7 +6,7 @@ R__LOAD_LIBRARY(/usr/local/lib/libCaloPulseSimulator.dylib)
 
 // ROOT macro
 int main() {
-  std::cout << "CPP Lib Tutorial Example - ROOT Macro" << std::endl;
+  std::cout << "Calo Pulse Simulator - Example ROOT Macro" << std::endl;
 
   Accumulator c;
   std::cout << c.getNextValue() << std::endl;

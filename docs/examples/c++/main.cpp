@@ -3,7 +3,7 @@
 
 int main()
 {
-  std::cout << "CPP Lib Tutorial Example - C++" << std::endl;
+  std::cout << "Calo Pulse Simulator - Example C++" << std::endl;
 
   Accumulator c;
   std::cout << c.getNextValue() << std::endl;

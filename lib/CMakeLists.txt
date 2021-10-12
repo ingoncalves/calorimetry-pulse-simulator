@@ -10,6 +10,9 @@ include_directories(${INCLUDE_DIR})
 # Create shared library
 add_library(${PROJECT_NAME} SHARED ${SOURCES})
 
+set(CMAKE_INSTALL_RPATH "/usr/local/lib")
+set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
+
 set_target_properties(${PROJECT_NAME} PROPERTIES
   VERSION ${PROJECT_VERSION}
   SOVERSION 1

@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp -o main -w -lCppLibTutorial
+	g++ main.cpp -o main -w -lCaloPulseSimulator

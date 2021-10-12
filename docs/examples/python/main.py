@@ -2,7 +2,7 @@
 
 import pyCaloPulseSimulator
 
-print("CPP Lib Tutorial Example - Python")
+print("Calo Pulse Simulator - Example Python")
 
 c = pyCaloPulseSimulator.Accumulator()
 print(c.get_next_value())
