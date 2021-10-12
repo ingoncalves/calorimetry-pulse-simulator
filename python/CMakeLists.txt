@@ -44,4 +44,4 @@ install(
   DESTINATION ${Python_SITELIB})
 
 # Tests
-add_test(NAME pyTest_${PROJECT_NAME} COMMAND ${Python_EXECUTABLE}  ${CMAKE_CURRENT_SOURCE_DIR}/test.py)
+add_test(NAME pyTest_${PROJECT_NAME} COMMAND ${Python_EXECUTABLE} ${CMAKE_CURRENT_SOURCE_DIR}/test.py)
