@@ -33,3 +33,5 @@
 
 build
 .cache
+.vim
+__pycache__

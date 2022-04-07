@@ -18,4 +18,6 @@ include_directories(${INCLUDE_DIR})
 target_link_libraries(${BINARY} PUBLIC ${PROJECT_NAME} gtest_main pthread)
 
 include(GoogleTest)
-gtest_discover_tests(${BINARY})
+
+# C++ tests
+gtest_discover_tests(${BINARY} WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})
