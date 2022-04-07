@@ -1,5 +1,5 @@
-cmake_policy(SET CMP0078 OLD)
-cmake_policy(SET CMP0086 OLD)
+cmake_policy(SET CMP0078 NEW)
+cmake_policy(SET CMP0086 NEW)
 
 # PYTHON
 find_package(Python COMPONENTS Interpreter Development REQUIRED)

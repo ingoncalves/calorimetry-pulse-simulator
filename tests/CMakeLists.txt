@@ -1,15 +1,21 @@
-include(GTest) # Custom module
-
-set(BINARY ${CMAKE_PROJECT_NAME}_tst)
+include(FetchContent)
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/609281088cfefc76f9d0ce82e1ff6c30cc3591e5.zip
+)
+# For Windows: Prevent overriding the parent project's compiler/linker settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
 
 file(GLOB_RECURSE TEST_SOURCES LIST_DIRECTORIES false *.h *.cpp)
-
 set(SOURCES ${TEST_SOURCES})
+set(BINARY ${CMAKE_PROJECT_NAME}_tst)
 
-include_directories(${GTEST_INCLUDE_DIR} ${INCLUDE_DIR})
-link_directories(${GTEST_LIBRARY_PATH})
+enable_testing()
 
 add_executable(${BINARY} ${TEST_SOURCES})
+include_directories(${INCLUDE_DIR})
+target_link_libraries(${BINARY} PUBLIC ${PROJECT_NAME} gtest_main pthread)
 
-add_test(NAME ${BINARY} COMMAND ${BINARY})
-target_link_libraries(${BINARY} PUBLIC ${PROJECT_NAME} ${GTEST_LIBRARY} pthread)
+include(GoogleTest)
+gtest_discover_tests(${BINARY})
