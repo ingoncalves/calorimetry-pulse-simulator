@@ -46,6 +46,6 @@ install(
 # Python tests
 add_test(
   NAME pyTest_${PROJECT_NAME}
-  COMMAND ${Python_EXECUTABLE} -m unittest discover -s ${CMAKE_CURRENT_SOURCE_DIR}/tests -p *.py
+  COMMAND ${Python_EXECUTABLE} -m unittest discover -v -s ${CMAKE_CURRENT_SOURCE_DIR}/tests -p *.py
   WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
   )

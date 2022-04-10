@@ -46,7 +46,8 @@ unsafe-load-any-extension=no
 disable=missing-module-docstring,
         missing-class-docstring,
         missing-function-docstring,
-        wrong-import-position
+        wrong-import-position,
+        line-too-long
 
 
 [MESSAGES CONTROL]

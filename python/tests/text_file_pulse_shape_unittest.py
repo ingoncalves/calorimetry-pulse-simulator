@@ -17,6 +17,10 @@ class TextFilePulseShape(unittest.TestCase):
         pulse_shape = lib.TextFilePulseShape(PULSE_SHAPE_FILE_PATH)
         self.assertEqual(pulse_shape.get_origin(), 151)
 
+    def test_get_size(self):
+        pulse_shape = lib.TextFilePulseShape(PULSE_SHAPE_FILE_PATH)
+        self.assertEqual(pulse_shape.get_size(), 401)
+
     def test_get_time_series(self):
         pulse_shape = lib.TextFilePulseShape(PULSE_SHAPE_FILE_PATH)
         time_series = pulse_shape.get_time_series()

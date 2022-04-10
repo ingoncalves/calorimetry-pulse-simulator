@@ -14,6 +14,7 @@ class TextFilePulseShape: public IPulseShape
 
     virtual float GetResolution() const;
     virtual unsigned int GetOrigin() const;
+    virtual unsigned int GetSize() const;
     virtual std::vector<std::pair<float,float>> GetTimeSeries() const;
 
   protected:

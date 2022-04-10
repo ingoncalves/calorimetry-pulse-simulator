@@ -13,6 +13,11 @@ TEST(TextFilePulseShapeTest, GetOrigin) {
   EXPECT_EQ(pulseShape.GetOrigin(), 151);
 }
 
+TEST(TextFilePulseShapeTest, GetSize) {
+  TextFilePulseShape pulseShape(PULSE_SHAPE_FILE_PATH);
+  EXPECT_EQ(pulseShape.GetSize(), 401);
+}
+
 TEST(TextFilePulseShapeTest, GetTimeSeries) {
   TextFilePulseShape pulseShape(PULSE_SHAPE_FILE_PATH);
   std::vector<std::pair<float,float>> timeSeries = pulseShape.GetTimeSeries();

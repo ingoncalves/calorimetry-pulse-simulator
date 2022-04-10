@@ -18,6 +18,10 @@ unsigned int TextFilePulseShape::GetOrigin() const {
   return m_origin;
 }
 
+unsigned int TextFilePulseShape::GetSize() const {
+  return m_pulseShape.size();
+}
+
 std::vector<std::pair<float,float>> TextFilePulseShape::GetTimeSeries() const {
   return m_pulseShape;
 }
