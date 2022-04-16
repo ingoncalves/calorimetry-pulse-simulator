@@ -102,7 +102,7 @@ TEST(PulseGenerator, GeneratePulse) {
   double deterministicAmplitude = 500;
   double deterministicPhase = 1.0;
   analogPulse = pulseGenerator.GeneratePulse(500, 1.0);
-  EXPECT_EQ(analogPulse[149], deterministicAmplitude);
+  EXPECT_EQ(analogPulse.GetSample(-1.0), deterministicAmplitude);
 
   // random values
   analogPulse = pulseGenerator.GeneratePulse();

@@ -40,8 +40,8 @@ class AnalogPulse(unittest.TestCase):
         pedestal = 50
         analog_pulse = lib.AnalogPulse(pulse_shape, amplitude, pedestal)
         self.assertEqual(
-            analog_pulse.get_sample(151),
-            pedestal + amplitude * pulse_shape.get_time_series()[151][1]
+            analog_pulse.get_sample(0),
+            pedestal + amplitude * pulse_shape.get_y(0)
         )
 
 if __name__ == '__main__':

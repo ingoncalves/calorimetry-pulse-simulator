@@ -45,64 +45,12 @@ bool AnalogPulse::operator!=(const AnalogPulse& rhs) const {
   return !(*this == rhs);
 }
 
-double AnalogPulse::operator[](unsigned int index) {
-  return GetSample(index);
-}
-
-AnalogPulse::iterator::iterator(const AnalogPulse& ref):
-  m_ref(&ref),
-  m_index(0)
-{}
-
-AnalogPulse::iterator::iterator(const AnalogPulse& ref, unsigned int index):
-  m_ref(&ref),
-  m_index(index)
-{}
-
-AnalogPulse::iterator::iterator(const iterator& source):
-  m_ref(source.m_ref),
-  m_index(source.m_index)
-{}
-
-AnalogPulse::iterator& AnalogPulse::iterator::operator++() {
-  m_index++;
-  return *this;
-}
-
-AnalogPulse::iterator AnalogPulse::iterator::operator++(int) {
-  iterator tmp(*this);
-  ++(*this);
-  return tmp;
-}
-
-bool AnalogPulse::iterator::operator==(iterator other) const {
-  return m_ref == other.m_ref && m_index == other.m_index;
-}
-
-bool AnalogPulse::iterator::operator!=(iterator other) const {
-  return !(*this == other);
-}
-
-const double AnalogPulse::iterator::operator*() {
-  return m_ref->GetSample(m_index);
-}
-
-double AnalogPulse::GetSample(unsigned int timeIndex) const {
-  int adjustedTimeIndex = GetIndexWithPhase(timeIndex);
-  if (adjustedTimeIndex < 0 || adjustedTimeIndex >= m_pulseShape->GetTimeSeries().size()) {
-    return 0;
-  }
-
-  double shapeSample = m_pulseShape->GetTimeSeries()[adjustedTimeIndex].second;
-  double deformation = GenerateDeformation(shapeSample);
-  double noise       = GenerateNoise();
-  double sample      = m_amplitude * (shapeSample + deformation) + m_pedestal + noise;
-  return sample;
-}
-
-int AnalogPulse::GetIndexWithPhase(unsigned int timeIndex) const {
-  int phaseIndexOffset = m_phase / m_pulseShape->GetResolution();
-  return timeIndex + phaseIndexOffset;
+double AnalogPulse::GetSample(const double& time) const {
+  double timeWithPhaseDeviation = time + m_phase;
+  double shapeSample            = m_pulseShape->GetY(timeWithPhaseDeviation);
+  double deformation            = GenerateDeformation(shapeSample);
+  double noise                  = GenerateNoise();
+  return m_amplitude * (shapeSample + deformation) + m_pedestal + noise;
 }
 
 double AnalogPulse::GenerateDeformation(double shapeSample) const {

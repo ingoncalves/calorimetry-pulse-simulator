@@ -40,7 +40,7 @@ class PulseGenerator(unittest.TestCase):
         deterministic_amplitude = 500
         deterministic_phase = 1.0
         analog_pulse = pulse_generator.generate_pulse(deterministic_amplitude, deterministic_phase)
-        self.assertEqual(analog_pulse.get_sample(149), deterministic_amplitude)
+        self.assertEqual(analog_pulse.get_sample(-1), deterministic_amplitude)
 
         # random values
         analog_pulse = pulse_generator.generate_pulse()
