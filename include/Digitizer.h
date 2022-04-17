@@ -1,17 +1,19 @@
 #ifndef DIGITIZER_H
 #define DIGITIZER_H
 
+#include "IDigitizer.h"
 #include "AnalogPulse.h"
 #include <vector>
 
-class Digitizer
+class Digitizer : public IDigitizer
 {
   public:
     Digitizer();
     Digitizer(unsigned int nSamples, double samplingRate, double startSamplingAtTime = 0);
     virtual ~Digitizer() = default;
 
-    std::vector<double> Digitize(const AnalogPulse * pulse) const;
+    virtual std::vector<double> Digitize(const AnalogPulse * pulse) const;
+
     // getters
     unsigned int GetNSamples() const { return m_nSamples; }
     double       GetSamplingRate() const { return m_samplingRate; }
