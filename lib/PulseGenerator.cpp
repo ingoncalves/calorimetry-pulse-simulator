@@ -12,14 +12,14 @@ PulseGenerator::PulseGenerator(const IPulseShape* pulseShape) :
   m_phaseDistribution(RandomDistribution::NO_DISTRIBUTION)
 {}
 
-AnalogPulse PulseGenerator::GeneratePulse() const {
+AnalogPulse* PulseGenerator::GeneratePulse() const {
   double amplitude = GenerateRandomNumber(m_amplitudeDistribution, m_amplitudeDistributionParams);
   double phase = GenerateRandomNumber(m_phaseDistribution, m_phaseDistributionParams);
   return GeneratePulse(amplitude, phase);
 }
 
-AnalogPulse PulseGenerator::GeneratePulse(double amplitude, double phase) const {
-  return AnalogPulse(m_pulseShape, amplitude, m_pedestal, phase, m_deformationLevel, m_noiseMean, m_noiseStdDev);
+AnalogPulse* PulseGenerator::GeneratePulse(double amplitude, double phase) const {
+  return new AnalogPulse(m_pulseShape, amplitude, m_pedestal, phase, m_deformationLevel, m_noiseMean, m_noiseStdDev);
 }
 
 PulseGenerator& PulseGenerator::SetPedestal(double pedestal) {

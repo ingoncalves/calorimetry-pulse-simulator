@@ -35,8 +35,8 @@ class PulseGenerator
     PulseGenerator&     SetNoiseParams(double noiseMean, double noiseStdDev);
     PulseGenerator&     SetAmplitudeDistribution(RandomDistribution distribution, const std::vector<double> & params);
     PulseGenerator&     SetPhaseDistribution(RandomDistribution distribution, const std::vector<double> & params);
-    AnalogPulse         GeneratePulse() const;
-    AnalogPulse         GeneratePulse(double amplitude, double phase) const;
+    AnalogPulse*        GeneratePulse() const;
+    AnalogPulse*        GeneratePulse(double amplitude, double phase) const;
 
   private:
     /*! Pulse shape */

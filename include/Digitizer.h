@@ -11,11 +11,11 @@ class Digitizer
     Digitizer(unsigned int nSamples, double samplingRate, double startSamplingAtTime = 0);
     virtual ~Digitizer() = default;
 
-    std::vector<double> Digitize(const AnalogPulse & pulse) const;
+    std::vector<double> Digitize(const AnalogPulse * pulse) const;
     // getters
-    int    GetNSamples() const { return m_nSamples; }
-    double GetSamplingRate() const { return m_samplingRate; }
-    double GetStartSamplingAtTime() const { return m_startSamplingAtTime; }
+    unsigned int GetNSamples() const { return m_nSamples; }
+    double       GetSamplingRate() const { return m_samplingRate; }
+    double       GetStartSamplingAtTime() const { return m_startSamplingAtTime; }
     // setters
     Digitizer& SetNSamples(unsigned int nSamples);
     Digitizer& SetSamplingRate(double samplingRate);

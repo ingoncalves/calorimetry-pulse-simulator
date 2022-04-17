@@ -27,11 +27,11 @@ Digitizer& Digitizer::SetStartSamplingAtTime(double startSamplingAtTime) {
   return *this;
 }
 
-std::vector<double> Digitizer::Digitize(const AnalogPulse& pulse) const {
+std::vector<double> Digitizer::Digitize(const AnalogPulse* pulse) const {
   std::vector<double> digitalSamples;
   for (unsigned int n = 0; n < m_nSamples; n++) {
     double time = m_startSamplingAtTime + (n * m_samplingRate);
-    double sample = pulse.GetSample(time);
+    double sample = pulse->GetSample(time);
     digitalSamples.push_back(sample);
   }
   return digitalSamples;

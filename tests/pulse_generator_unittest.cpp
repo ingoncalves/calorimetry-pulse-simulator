@@ -69,18 +69,18 @@ TEST(PulseGenerator, GeneratePulse) {
     .SetAmplitudeDistribution(PulseGenerator::UNIFORM_INT_DISTRIBUTION, {80, 90})
     .SetPhaseDistribution(PulseGenerator::UNIFORM_INT_DISTRIBUTION, {-4, 4});
 
-  AnalogPulse analogPulse;
+  AnalogPulse* analogPulse;
 
   // deterministic values
   double deterministicAmplitude = 500;
   double deterministicPhase = 1.0;
   analogPulse = pulseGenerator.GeneratePulse(500, 1.0);
-  EXPECT_EQ(analogPulse.GetSample(-1.0), deterministicAmplitude);
+  EXPECT_EQ(analogPulse->GetSample(-1.0), deterministicAmplitude);
 
   // random values
   analogPulse = pulseGenerator.GeneratePulse();
-  EXPECT_GE(analogPulse.GetAmplitude(), 80);
-  EXPECT_LE(analogPulse.GetAmplitude(), 90);
-  EXPECT_GE(analogPulse.GetPhase(), -4);
-  EXPECT_LE(analogPulse.GetPhase(), 4);
+  EXPECT_GE(analogPulse->GetAmplitude(), 80);
+  EXPECT_LE(analogPulse->GetAmplitude(), 90);
+  EXPECT_GE(analogPulse->GetPhase(), -4);
+  EXPECT_LE(analogPulse->GetPhase(), 4);
 }

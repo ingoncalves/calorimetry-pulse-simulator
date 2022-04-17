@@ -37,7 +37,7 @@ TEST(Digitizer, StartSamplingAtTime) {
 
 TEST(Digitizer, Digitize) {
   const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
-  AnalogPulse analogPulse(pulseShape);
+  AnalogPulse* analogPulse = new AnalogPulse(pulseShape);
 
   unsigned int nSamples = 7;
   double samplingRate = 25.0;
@@ -49,6 +49,6 @@ TEST(Digitizer, Digitize) {
 
   double expectedSamplesTime[] = {-75.0, -50.0, -25.0, 0.0, 25.0, 50.0, 75.0};
   for (int i = 0; i < nSamples; i++) {
-    EXPECT_EQ(digitalSamples[i], analogPulse.GetSample(expectedSamplesTime[i]));
+    EXPECT_EQ(digitalSamples[i], analogPulse->GetSample(expectedSamplesTime[i]));
   }
 }
