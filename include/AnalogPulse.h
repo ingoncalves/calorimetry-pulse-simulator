@@ -33,6 +33,7 @@ class AnalogPulse
     double GetDeformationLevel() const { return m_deformationLevel; }
     double GetNoiseMean() const { return m_noiseMean; }
     double GetNoiseStdDev() const { return m_noiseStdDev; }
+    const IPulseShape* GetPulseShape() const { return m_pulseShape; }
 
   private:
     /*! Pulse shape */

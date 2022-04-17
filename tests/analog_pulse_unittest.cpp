@@ -34,6 +34,7 @@ TEST(AnalogPulse, Construction) {
   EXPECT_EQ(analogPulse.GetNoiseStdDev(), noiseStdDev);
   EXPECT_EQ(analogPulse.GetPedestal(), pedestal);
   EXPECT_EQ(analogPulse.GetDeformationLevel(), deformationLevel);
+  EXPECT_EQ(analogPulse.GetPulseShape(), pulseShape);
 }
 
 TEST(AnalogPulse, GetSample) {
