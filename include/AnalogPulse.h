@@ -5,18 +5,19 @@
 #include <random>
 #include <iterator>
 
+namespace cps {
 class AnalogPulse
-{
+  {
   public:
     AnalogPulse(
-        const IPulseShape* pulseShape = 0,
-        double amplitude = 1,
-        double pedestal = 0,
-        double phase = 0,
-        double deformationLevel = 0,
-        double noiseMean = 0,
-        double noiseStdDev = 0
-        );
+      const IPulseShape* pulseShape = 0,
+      double amplitude = 1,
+      double pedestal = 0,
+      double phase = 0,
+      double deformationLevel = 0,
+      double noiseMean = 0,
+      double noiseStdDev = 0
+    );
     AnalogPulse(const AnalogPulse& source);
     virtual ~AnalogPulse() = default;
 
@@ -53,6 +54,7 @@ class AnalogPulse
 
     double GenerateDeformation(double shapeSample) const;
     double GenerateNoise() const;
-};
+  };
+}
 
 #endif /* ANALOG_PULSE_H */

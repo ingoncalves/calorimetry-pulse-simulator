@@ -1,6 +1,8 @@
 #include "AnalogPulse.h"
 #include <cmath>
 
+using namespace cps;
+
 AnalogPulse::AnalogPulse(
     const IPulseShape* pulseShape,
     double amplitude,

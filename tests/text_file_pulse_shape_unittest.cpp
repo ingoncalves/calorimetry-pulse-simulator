@@ -1,6 +1,8 @@
 #include <gtest/gtest.h>
 #include "TextFilePulseShape.h"
 
+using namespace cps;
+
 const char * PULSE_SHAPE_FILE_PATH = "tests/fixtures/unipolar-pulse-shape.dat";
 
 TEST(TextFilePulseShapeTest, GetResolution) {

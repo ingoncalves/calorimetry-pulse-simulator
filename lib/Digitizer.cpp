@@ -1,5 +1,7 @@
 #include "Digitizer.h"
 
+using namespace cps;
+
 Digitizer::Digitizer() :
   m_nSamples(0),
   m_samplingRate(0),

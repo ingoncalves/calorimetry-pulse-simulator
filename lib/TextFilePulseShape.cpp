@@ -2,6 +2,8 @@
 #include <stdexcept>
 #include <fstream>
 
+using namespace cps;
+
 TextFilePulseShape::TextFilePulseShape(const char* shaperFile) :
   m_shaperFile(shaperFile),
   m_resolution(0)

@@ -6,8 +6,9 @@
 #include <string>
 #include <vector>
 
+namespace cps {
 class TextFilePulseShape: public IPulseShape
-{
+  {
   public:
     TextFilePulseShape(const char * shaperFile);
     ~TextFilePulseShape();
@@ -32,6 +33,7 @@ class TextFilePulseShape: public IPulseShape
 
   private:
     unsigned int TimeToIndex(const double & time) const;
-};
+  };
+}
 
 #endif /* TEXT_FILE_PULSE_SHAPE_H */

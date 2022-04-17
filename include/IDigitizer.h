@@ -4,10 +4,12 @@
 #include "AnalogPulse.h"
 #include <vector>
 
+namespace cps {
 class IDigitizer
-{
+  {
   public:
     virtual std::vector<double> Digitize(const AnalogPulse * pulse) const = 0;
-};
+  };
+}
 
 #endif /* I_DIGITIZER_H */

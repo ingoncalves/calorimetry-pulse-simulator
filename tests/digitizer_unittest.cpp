@@ -8,6 +8,8 @@
 #define PULSE_SHAPE_FILE_PATH "tests/fixtures/unipolar-pulse-shape.dat"
 #endif
 
+using namespace cps;
+
 TEST(Digitizer, NSamples) {
   Digitizer digitizer;
   // default value

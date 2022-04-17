@@ -11,6 +11,7 @@
   #include "AnalogPulse.h"
   #include "PulseGenerator.h"
   #include "Digitizer.h"
+  using namespace cps;
 %}
 
 %rename("%(undercase)s", %$isfunction) "";

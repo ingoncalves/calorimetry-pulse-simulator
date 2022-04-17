@@ -1,5 +1,7 @@
 #include "PulseGenerator.h"
 
+using namespace cps;
+
 PulseGenerator::PulseGenerator(const IPulseShape* pulseShape) :
   m_generator(),
   m_pulseShape(pulseShape),

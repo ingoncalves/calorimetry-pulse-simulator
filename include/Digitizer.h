@@ -5,8 +5,9 @@
 #include "AnalogPulse.h"
 #include <vector>
 
+namespace cps {
 class Digitizer : public IDigitizer
-{
+  {
   public:
     Digitizer();
     Digitizer(unsigned int nSamples, double samplingRate, double startSamplingAtTime = 0);
@@ -30,6 +31,7 @@ class Digitizer : public IDigitizer
     double m_samplingRate;
     /*! Time coordinate of the pulse shape when the sampling starts */
     double m_startSamplingAtTime;
-};
+  };
+}
 
 #endif /* DIGITIZER_H */

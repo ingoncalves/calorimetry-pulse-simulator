@@ -6,6 +6,8 @@
 #define PULSE_SHAPE_FILE_PATH "tests/fixtures/unipolar-pulse-shape.dat"
 #endif
 
+using namespace cps;
+
 const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
 
 TEST(PulseGenerator, Pedestal) {

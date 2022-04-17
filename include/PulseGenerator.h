@@ -6,8 +6,9 @@
 #include <vector>
 #include <random>
 
+namespace cps {
 class PulseGenerator
-{
+  {
   public:
     enum RandomDistribution {
       NO_DISTRIBUTION,
@@ -61,6 +62,7 @@ class PulseGenerator
     mutable std::default_random_engine m_generator;
 
     double GenerateRandomNumber(RandomDistribution distribution, const std::vector<double> & params) const;
-};
+  };
+}
 
 #endif /* PULSE_GENERATOR_H */
