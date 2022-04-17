@@ -1,11 +1,8 @@
 %module pyCaloPulseSimulator
 
-%include <std_pair.i>
 %include <std_vector.i>
 %include <std_string.i>
 
-%template() std::pair<float,float>;
-%template(FloatPairVector) std::vector<std::pair<float,float>>;
 %template(DoubleVector) std::vector<double>;
 
 %{
@@ -14,6 +11,7 @@
   #include "TextFilePulseShape.h"
   #include "AnalogPulse.h"
   #include "PulseGenerator.h"
+  #include "Digitizer.h"
 %}
 
 %rename("%(undercase)s", %$isfunction) "";
@@ -23,3 +21,4 @@
 %include "TextFilePulseShape.h"
 %include "AnalogPulse.h"
 %include "PulseGenerator.h"
+%include "Digitizer.h"

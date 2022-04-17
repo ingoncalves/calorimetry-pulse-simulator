@@ -3,9 +3,6 @@
 PulseGenerator::PulseGenerator(const IPulseShape* pulseShape) :
   m_generator(),
   m_pulseShape(pulseShape),
-  m_nSamples(0),
-  m_samplingRate(0),
-  m_startSamplingAtTime(0),
   m_pedestal(0),
   m_deformationLevel(0),
   m_noiseMean(0),
@@ -23,21 +20,6 @@ AnalogPulse PulseGenerator::GeneratePulse() const {
 
 AnalogPulse PulseGenerator::GeneratePulse(double amplitude, double phase) const {
   return AnalogPulse(m_pulseShape, amplitude, m_pedestal, phase, m_deformationLevel, m_noiseMean, m_noiseStdDev);
-}
-
-PulseGenerator& PulseGenerator::SetNSamples(int nSamples) {
-  m_nSamples = nSamples;
-  return *this;
-}
-
-PulseGenerator& PulseGenerator::SetSamplingRate(double samplingRate) {
-  m_samplingRate = samplingRate;
-  return *this;
-}
-
-PulseGenerator& PulseGenerator::SetStartSamplingAtTime(double startSamplingAtTime) {
-  m_startSamplingAtTime = startSamplingAtTime;
-  return *this;
 }
 
 PulseGenerator& PulseGenerator::SetPedestal(double pedestal) {

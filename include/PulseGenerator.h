@@ -21,9 +21,6 @@ class PulseGenerator
     virtual ~PulseGenerator() = default;
 
     // getters
-    int                 GetNSamples() const { return m_nSamples; }
-    double              GetSamplingRate() const { return m_samplingRate; }
-    double              GetStartSamplingAtTime() const { return m_startSamplingAtTime; }
     double              GetPedestal() const { return m_pedestal; }
     double              GetDeformationLevel() const { return m_deformationLevel; }
     double              GetNoiseMean() const { return m_noiseMean; }
@@ -33,9 +30,6 @@ class PulseGenerator
     RandomDistribution  GetPhaseDistribution() const { return m_phaseDistribution; }
     std::vector<double> GetPhaseDistributionParams() const { return m_phaseDistributionParams; }
     //                  setters
-    PulseGenerator&     SetNSamples(int nSamples);
-    PulseGenerator&     SetSamplingRate(double samplingRate);
-    PulseGenerator&     SetStartSamplingAtTime(double startSamplingAtTime);
     PulseGenerator&     SetPedestal(double pedestal);
     PulseGenerator&     SetDeformationLevel(double deformationLevel);
     PulseGenerator&     SetNoiseParams(double noiseMean, double noiseStdDev);
@@ -47,12 +41,6 @@ class PulseGenerator
   private:
     /*! Pulse shape */
     const IPulseShape* m_pulseShape;
-    /*! Number of samples to be generated */
-    int m_nSamples;
-    /*! Sampling rate */
-    double m_samplingRate;
-    /*! Time coordinate of the pulse shape when the sampling starts */
-    double m_startSamplingAtTime;
     /*! Constant value added to each sample */
     double m_pedestal;
     /*! Value between 0.0 and 1.0 that represents the amount of deformation applied to each sample  */

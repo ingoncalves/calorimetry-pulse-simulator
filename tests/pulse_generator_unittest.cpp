@@ -8,33 +8,6 @@
 
 const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
 
-TEST(PulseGenerator, NSamples) {
-  PulseGenerator pulseGenerator(pulseShape);
-  // default value
-  EXPECT_EQ(pulseGenerator.GetNSamples(), 0);
-  // new value
-  int nSamples = 7;
-  EXPECT_EQ(pulseGenerator.SetNSamples(nSamples).GetNSamples(), nSamples);
-}
-
-TEST(PulseGenerator, SamplingRate) {
-  PulseGenerator pulseGenerator(pulseShape);
-  // default value
-  EXPECT_EQ(pulseGenerator.GetSamplingRate(), 0.0);
-  // new value
-  double samplingRate = 25.0;
-  EXPECT_EQ(pulseGenerator.SetSamplingRate(samplingRate).GetSamplingRate(), samplingRate);
-}
-
-TEST(PulseGenerator, StartSamplingAtTime) {
-  PulseGenerator pulseGenerator(pulseShape);
-  // default value
-  EXPECT_EQ(pulseGenerator.GetStartSamplingAtTime(), 0.0);
-  // new value
-  double startSamplingRateAtTime = -25.0;
-  EXPECT_EQ(pulseGenerator.SetStartSamplingAtTime(startSamplingRateAtTime).GetStartSamplingAtTime(), startSamplingRateAtTime);
-}
-
 TEST(PulseGenerator, Pedestal) {
   PulseGenerator pulseGenerator(pulseShape);
   // default value
