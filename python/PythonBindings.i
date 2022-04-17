@@ -7,7 +7,6 @@
 
 %{
   #include "algorithms/Accumulator.h"
-  #include "IPulseShape.h"
   #include "TextFilePulseShape.h"
   #include "AnalogPulse.h"
   #include "PulseGenerator.h"
@@ -17,7 +16,6 @@
 %rename("%(undercase)s", %$isfunction) "";
 
 %include "algorithms/Accumulator.h"
-%include "IPulseShape.h"
 %include "TextFilePulseShape.h"
 %include "AnalogPulse.h"
 %include "PulseGenerator.h"

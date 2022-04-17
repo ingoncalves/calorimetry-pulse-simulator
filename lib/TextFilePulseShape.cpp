@@ -9,12 +9,31 @@ TextFilePulseShape::TextFilePulseShape(const char* shaperFile) :
   ReadShaper();
 }
 
+TextFilePulseShape::~TextFilePulseShape() {
+  m_tSeries.clear();
+  m_ySeries.clear();
+}
+
 float TextFilePulseShape::GetResolution() const {
   return m_resolution;
 }
 
 unsigned int TextFilePulseShape::GetSize() const {
   return m_ySeries.size();
+}
+
+unsigned int TextFilePulseShape::TimeToIndex(const double & time) const {
+  auto timeAnchor = std::lower_bound(m_tSeries.begin(), m_tSeries.end(), time);
+  unsigned int timeIndex = timeAnchor != m_tSeries.end()
+    ? std::distance(m_tSeries.begin(), timeAnchor)
+    : m_tSeries.size() - 1;
+  return timeIndex;
+}
+
+double TextFilePulseShape::GetY(const double & time) const {
+  if (m_tSeries.size() == 0 || m_ySeries.size() == 0) return 0;
+  unsigned int timeIndex = TimeToIndex(time);
+  return m_ySeries[timeIndex];
 }
 
 void TextFilePulseShape::ReadShaper() {
