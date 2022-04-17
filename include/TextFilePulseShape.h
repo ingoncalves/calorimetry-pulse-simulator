@@ -18,6 +18,8 @@ class TextFilePulseShape: public IPulseShape
     std::vector<double> GetTimeSeries() const { return m_tSeries; }
     std::vector<double> GetYSeries() const { return m_ySeries; }
     virtual double      GetY(const double & time) const;
+    virtual double      GetTMin() const;
+    virtual double      GetTMax() const;
 
   protected:
     void ReadShaper();

@@ -31,6 +31,16 @@ TEST(TextFilePulseShapeTest, GetYSeries) {
   EXPECT_NEAR(ySeries[400], 0.0018547, 1.0e-7);
 }
 
+TEST(TextFilePulseShapeTest, GetTMin) {
+  TextFilePulseShape pulseShape(PULSE_SHAPE_FILE_PATH);
+  EXPECT_EQ(pulseShape.GetTMin(), -75.5);
+}
+
+TEST(TextFilePulseShapeTest, GetTMax) {
+  TextFilePulseShape pulseShape(PULSE_SHAPE_FILE_PATH);
+  EXPECT_EQ(pulseShape.GetTMax(), 124.5);
+}
+
 TEST(TextFilePulseShapeTest, GetY) {
   TextFilePulseShape pulseShape(PULSE_SHAPE_FILE_PATH);
   EXPECT_EQ(  pulseShape.GetY(-75.5),   0.0);

@@ -32,6 +32,14 @@ unsigned int TextFilePulseShape::TimeToIndex(const double & time) const {
   return timeIndex;
 }
 
+double TextFilePulseShape::GetTMin() const {
+  return m_tSeries[0];
+}
+
+double TextFilePulseShape::GetTMax() const {
+  return m_tSeries[m_tSeries.size() - 1];
+}
+
 double TextFilePulseShape::GetY(const double & time) const {
   if (m_tSeries.size() == 0 || m_ySeries.size() == 0) return 0;
   unsigned int timeIndex = TimeToIndex(time);
