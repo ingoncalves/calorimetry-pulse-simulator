@@ -20,9 +20,10 @@
 %rename("%(undercase)s", %$isfunction) "";
 
 %include "algorithms/Accumulator.h"
+%include "IPulseShape.h"
 %include "TextFilePulseShape.h"
 %include "AnalogPulse.h"
 %include "PulseGenerator.h"
+%include "IDigitizer.h"
 %include "Digitizer.h"
 %include "DatasetGenerator.h"
-

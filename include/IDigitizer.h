@@ -8,6 +8,7 @@ namespace cps {
 class IDigitizer
   {
   public:
+    virtual ~IDigitizer() {}
     virtual std::vector<double> Digitize(const AnalogPulse * pulse) const = 0;
   };
 }

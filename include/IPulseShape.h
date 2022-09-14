@@ -7,6 +7,7 @@ namespace cps {
 class IPulseShape
   {
   public:
+    virtual ~IPulseShape() {}
     virtual double GetY(const double & time) const = 0;
     virtual double GetTMin() const = 0;
     virtual double GetTMax() const = 0;
