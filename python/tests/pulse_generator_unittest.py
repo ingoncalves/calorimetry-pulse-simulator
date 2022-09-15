@@ -5,18 +5,19 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../build/python')
 import unittest
 import pyCaloPulseSimulator as lib
 
-PULSE_SHAPE_FILE_PATH = "tests/fixtures/unipolar-pulse-shape.dat"
-
 class PulseGenerator(unittest.TestCase):
 
+    def setUp(self):
+        pulse_shape_file_path = "tests/fixtures/unipolar-pulse-shape.dat"
+        self.pulse_shape = lib.TextFilePulseShape(pulse_shape_file_path)
+
     def test_construction(self):
-        pulse_shape = lib.TextFilePulseShape(PULSE_SHAPE_FILE_PATH)
         pedestal = 15.3
         deformation_level = 0.2
         noise_mean = 0.01
         noise_std_dev = 0.1
 
-        pulse_generator = lib.PulseGenerator(pulse_shape)\
+        pulse_generator = lib.PulseGenerator(self.pulse_shape)\
                              .set_pedestal(pedestal)\
                              .set_deformation_level(deformation_level)\
                              .set_noise_params(noise_mean, noise_std_dev)\
@@ -31,8 +32,7 @@ class PulseGenerator(unittest.TestCase):
         self.assertEqual(pulse_generator.get_phase_distribution(), lib.PulseGenerator.NORMAL_DISTRIBUTION)
 
     def test_generate_pulse(self):
-        pulse_shape = lib.TextFilePulseShape(PULSE_SHAPE_FILE_PATH)
-        pulse_generator = lib.PulseGenerator(pulse_shape)
+        pulse_generator = lib.PulseGenerator(self.pulse_shape)
         pulse_generator.set_amplitude_distribution(lib.PulseGenerator.UNIFORM_INT_DISTRIBUTION, [10, 20])
         pulse_generator.set_phase_distribution(lib.PulseGenerator.UNIFORM_INT_DISTRIBUTION, [-4, 4])
 

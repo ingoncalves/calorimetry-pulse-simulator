@@ -14,10 +14,10 @@ class Digitizer(unittest.TestCase):
         sampling_rate = 25.0
         start_sampling_at_time = -75.0
 
-        digitizer = lib.Digitizer()\
-                             .set_nsamples(n_samples)\
-                             .set_sampling_rate(sampling_rate)\
-                             .set_start_sampling_at_time(start_sampling_at_time)
+        digitizer = lib.Digitizer()
+        digitizer.set_nsamples(n_samples)\
+                 .set_sampling_rate(sampling_rate)\
+                 .set_start_sampling_at_time(start_sampling_at_time)
 
         self.assertEqual(digitizer.get_nsamples(), n_samples)
         self.assertEqual(digitizer.get_sampling_rate(), sampling_rate)
