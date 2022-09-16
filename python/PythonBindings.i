@@ -1,9 +1,14 @@
 %module pyCaloPulseSimulator
 
+%{
+# define SWIG_PYTHON_EXTRA_NATIVE_CONTAINERS
+%}
+
 %include <std_vector.i>
 %include <std_string.i>
 
 %template(DoubleVector) std::vector<double>;
+%template(DoubleMatrix) std::vector<std::vector<double>>;
 
 %{
   #include "algorithms/Accumulator.h"

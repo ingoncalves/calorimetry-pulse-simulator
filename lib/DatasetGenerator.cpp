@@ -39,9 +39,35 @@ DatasetGenerator& DatasetGenerator::SetEventsScheme(std::vector<EventSchemeBlock
   return *this;
 }
 
-const Dataset* DatasetGenerator::GenerateContinuousDataset(unsigned int nEvents) const {
+const ContinuousDataset* DatasetGenerator::GenerateContinuousDataset(unsigned int nEvents) const {
   auto events = GenerateEvents(nEvents);
   return SampleEvents(events);
+}
+
+const SlicedDataset* DatasetGenerator::GenerateSlicedDataset(unsigned int nSlices, unsigned int sliceSize) const {
+  const unsigned int nEvents = nSlices * sliceSize;
+  auto continuousDataset = GenerateContinuousDataset(nEvents);
+
+  std::vector<std::vector<double>> slicedSamples(nSlices);
+  std::vector<std::vector<double>> slicedAmpltiudes(nSlices);
+  std::vector<std::vector<double>> slicedPhases(nSlices);
+
+  for (unsigned int i = 0; i < nSlices; i++) {
+    std::vector<double> samples(sliceSize);
+    std::vector<double> ampltiudes(sliceSize);
+    std::vector<double> phases(sliceSize);
+    for (unsigned int j = 0; j < sliceSize; j++) {
+      samples[j] = continuousDataset->samples[i * sliceSize + j];
+      ampltiudes[j] = continuousDataset->amplitudes[i * sliceSize + j];
+      phases[j] = continuousDataset->phases[i * sliceSize + j];
+    }
+    slicedSamples[i] = samples;
+    slicedAmpltiudes[i] = ampltiudes;
+    slicedPhases[i] = phases;
+  }
+
+  delete continuousDataset;
+  return new SlicedDataset { slicedSamples, slicedAmpltiudes, slicedPhases };
 }
 
 const std::vector<AnalogPulse*> DatasetGenerator::GenerateEvents(unsigned int nEvents) const {
@@ -72,7 +98,7 @@ const std::vector<AnalogPulse*> DatasetGenerator::GenerateEvents(unsigned int nE
   return pulses;
 }
 
-const Dataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*> pulses) const {
+const ContinuousDataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*> pulses) const {
   unsigned int nEvents = pulses.size();
 
   std::vector<double> samples(nEvents, m_pulseGenerator->GetPedestal());
@@ -104,7 +130,7 @@ const Dataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*> pulses) 
 
   pulses.clear();
 
-  return new Dataset{
+  return new ContinuousDataset{
     samples = samples,
     ampltiudes = ampltiudes,
     phases = phases,

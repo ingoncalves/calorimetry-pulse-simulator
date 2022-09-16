@@ -9,10 +9,16 @@ namespace cps {
 
 class DatasetGenerator;
 
-struct Dataset {
+struct ContinuousDataset {
   std::vector<double> samples;
   std::vector<double> amplitudes;
   std::vector<double> phases;
+};
+
+struct SlicedDataset {
+  std::vector<std::vector<double>> samples;
+  std::vector<std::vector<double>> amplitudes;
+  std::vector<std::vector<double>> phases;
 };
 
 class EventSchemeBlock {
@@ -39,13 +45,13 @@ class DatasetGenerator
     double                GetOccupancy() const { return m_occupancy; }
     const PulseGenerator* GetPulseGenerator() const { return m_pulseGenerator; }
     // setters
-    DatasetGenerator& SetPulseGenerator(const PulseGenerator * pulseGenerator);
-    DatasetGenerator& SetNoiseParams(double noiseMean, double noiseStdDev);
-    DatasetGenerator& SetSamplingRate(double samplingRate);
-    DatasetGenerator& SetOccupancy(double occupancy);
-    DatasetGenerator& SetEventsScheme(std::vector<EventSchemeBlock> eventsScheme);
-    const Dataset*    GenerateContinuousDataset(unsigned int nEvents) const;
-    // const Dataset*    GenerateSlicedDataset(unsigned int nEvents, unsigned int sliceSize) const;
+    DatasetGenerator&        SetPulseGenerator(const PulseGenerator * pulseGenerator);
+    DatasetGenerator&        SetNoiseParams(double noiseMean, double noiseStdDev);
+    DatasetGenerator&        SetSamplingRate(double samplingRate);
+    DatasetGenerator&        SetOccupancy(double occupancy);
+    DatasetGenerator&        SetEventsScheme(std::vector<EventSchemeBlock> eventsScheme);
+    const ContinuousDataset* GenerateContinuousDataset(unsigned int nEvents) const;
+    const SlicedDataset*     GenerateSlicedDataset(unsigned int nSlices, unsigned int sliceSize) const;
 
     inline static EventSchemeBlock AllowedEventsBlock(int size) {
       return EventSchemeBlock(size, EventSchemeBlock::ALLOWED_EVENTS);
@@ -71,7 +77,7 @@ class DatasetGenerator
     mutable std::default_random_engine m_randomEngine;
 
     const std::vector<AnalogPulse*> GenerateEvents(unsigned int nEvents) const;
-    const Dataset* SampleEvents(std::vector<AnalogPulse*> pulses) const;
+    const ContinuousDataset* SampleEvents(std::vector<AnalogPulse*> pulses) const;
     double         GenerateNoise() const;
   };
 }

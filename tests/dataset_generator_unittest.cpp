@@ -51,7 +51,6 @@ TEST(DatasetGenerator, Occupancy) {
 }
 
 TEST(DatasetGenerator, GenerateContinuousDataset) {
-  // new value
   const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
   const PulseGenerator* pulseGenerator = new PulseGenerator(pulseShape);
   DatasetGenerator datasetGenerator = DatasetGenerator()
@@ -68,7 +67,6 @@ TEST(DatasetGenerator, GenerateContinuousDataset) {
 }
 
 TEST(DatasetGenerator, EventScheme) {
-  // new value
   const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
   const PulseGenerator* pulseGenerator = new PulseGenerator(pulseShape);
   DatasetGenerator datasetGenerator = DatasetGenerator()
@@ -87,4 +85,24 @@ TEST(DatasetGenerator, EventScheme) {
   for (int i = 0; i < nEvents; i++) {
     std::cout << dataset->samples[i] << "\t" << dataset->amplitudes[i] << std::endl;
   }
+}
+
+TEST(DatasetGenerator, GenerateSlicedDataset) {
+  const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
+  const PulseGenerator* pulseGenerator = new PulseGenerator(pulseShape);
+  DatasetGenerator datasetGenerator = DatasetGenerator()
+    .SetSamplingRate(25.0)
+    .SetOccupancy(0.05)
+    .SetNoiseParams(0, 0)
+    .SetPulseGenerator(pulseGenerator);
+
+  unsigned int nSlices = 100;
+  unsigned int sliceSize = 7;
+  auto dataset = datasetGenerator.GenerateSlicedDataset(nSlices, sliceSize);
+  EXPECT_EQ(dataset->samples.size(), nSlices);
+  EXPECT_EQ(dataset->samples[0].size(), sliceSize);
+  EXPECT_EQ(dataset->amplitudes.size(), nSlices);
+  EXPECT_EQ(dataset->amplitudes[0].size(), sliceSize);
+  EXPECT_EQ(dataset->phases.size(), nSlices);
+  EXPECT_EQ(dataset->phases[0].size(), sliceSize);
 }

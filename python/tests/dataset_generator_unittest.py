@@ -53,6 +53,26 @@ class DatasetGenerator(unittest.TestCase):
         self.assertEqual(dataset.phases.size(), n_events)
 
 
+    def test_sliced_dataset(self):
+        pulse_generator = lib.PulseGenerator(self.pulse_shape)
+        pulse_generator.set_amplitude_distribution(lib.PulseGenerator.UNIFORM_INT_DISTRIBUTION, [10, 20])
+        pulse_generator.set_phase_distribution(lib.PulseGenerator.UNIFORM_INT_DISTRIBUTION, [-4, 4])
+        dataset_generator = lib.DatasetGenerator()
+        dataset_generator.set_pulse_generator(pulse_generator)
+        dataset_generator.set_occupancy(1)
+        dataset_generator.set_sampling_rate(25.0)
+        dataset_generator.set_events_scheme([lib.DatasetGenerator.allowed_events_block(5), lib.DatasetGenerator.not_allowed_events_block(10) ])
+
+        n_slices = 100
+        slice_size = 7
+        dataset = dataset_generator.generate_sliced_dataset(n_slices, slice_size)
+        self.assertEqual(dataset.samples.size(), n_slices)
+        self.assertEqual(dataset.samples[0].size(), slice_size)
+        self.assertEqual(dataset.amplitudes.size(), n_slices)
+        self.assertEqual(dataset.amplitudes[0].size(), slice_size)
+        self.assertEqual(dataset.phases.size(), n_slices)
+        self.assertEqual(dataset.phases[0].size(), slice_size)
+
 
 if __name__ == '__main__':
     unittest.main()
