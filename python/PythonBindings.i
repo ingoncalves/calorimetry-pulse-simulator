@@ -1,4 +1,4 @@
-%module pyCaloPulseSimulator
+%module pycps
 
 %{
 # define SWIG_PYTHON_EXTRA_NATIVE_CONTAINERS

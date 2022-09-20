@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import matplotlib.pyplot as plt
 import numpy as np
-from pyCaloPulseSimulator import AnalogPulse, TextFilePulseShape, Digitizer
+from pycps import AnalogPulse, TextFilePulseShape, Digitizer
 
 
 def main():

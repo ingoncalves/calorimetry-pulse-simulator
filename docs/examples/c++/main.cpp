@@ -1,11 +1,11 @@
 #include <iostream>
-#include <CaloPulseSimulator/Accumulator.h>
+#include <cps/Accumulator.h>
 
 int main()
 {
   std::cout << "Calo Pulse Simulator - Example C++" << std::endl;
 
-  Accumulator c;
+  cps::Accumulator c;
   std::cout << c.getNextValue() << std::endl;
   std::cout << c.getNextValue() << std::endl;
   std::cout << c.getNextValue() << std::endl;

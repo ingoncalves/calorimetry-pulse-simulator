@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
 
-import pyCaloPulseSimulator
+from pycps import Accumulator
 
 print("Calo Pulse Simulator - Example Python")
 
-c = pyCaloPulseSimulator.Accumulator()
+c = Accumulator()
 print(c.get_next_value())
 print(c.get_next_value())
 print(c.get_next_value())

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import numpy as np
 import matplotlib.pyplot as plt
-from pyCaloPulseSimulator import DatasetGenerator, TextFilePulseShape, PulseGenerator
+from pycps import DatasetGenerator, TextFilePulseShape, PulseGenerator
 
 def main():
     """
