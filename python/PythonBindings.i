@@ -11,7 +11,6 @@
 %template(DoubleMatrix) std::vector<std::vector<double>>;
 
 %{
-  #include "algorithms/Accumulator.h"
   #include "TextFilePulseShape.h"
   #include "AnalogPulse.h"
   #include "PulseGenerator.h"
@@ -24,7 +23,6 @@
 %template(Events) std::vector<cps::AnalogPulse*>;
 %rename("%(undercase)s", %$isfunction) "";
 
-%include "algorithms/Accumulator.h"
 %include "IPulseShape.h"
 %include "TextFilePulseShape.h"
 %include "AnalogPulse.h"

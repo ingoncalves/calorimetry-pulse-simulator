@@ -2,7 +2,7 @@ include(GNUInstallDirs)
 
 # Find source files
 file(GLOB SOURCES *.cpp)
-file(GLOB HEADERS ${INCLUDE_DIR}/**/*.h)
+file(GLOB HEADERS ${INCLUDE_DIR}/*.h ${INCLUDE_DIR}/**/*.h)
 
 # Include header files
 include_directories(${INCLUDE_DIR})
@@ -16,7 +16,7 @@ set(CMAKE_INSTALL_RPATH_USE_LINK_PATH TRUE)
 set_target_properties(${PROJECT_NAME} PROPERTIES
   VERSION ${PROJECT_VERSION}
   SOVERSION 1
-  PUBLIC_HEADER ${HEADERS})
+  PUBLIC_HEADER "${HEADERS}")
 
 # Install library
 install(
