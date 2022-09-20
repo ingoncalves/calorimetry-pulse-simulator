@@ -4,6 +4,10 @@ Set of functions in C++ and Python for generating typical analog and digital
 calorimetry signals with the ability to simulate phenomena such as electronic
 noise, signal pileup, phase shift, baseline, among others.
 
+Useful links:
+ - [API Reference](https://ingoncalves.github.io/calo-pulse-simulator/)
+ - [Examples](./docs/examples)
+
 ## Getting started
 
 Please, follow the instructions for Unix based SO. Requires
