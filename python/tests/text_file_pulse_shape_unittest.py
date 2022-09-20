@@ -3,7 +3,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../build/python'))
 
 import unittest
-import pyCaloPulseSimulator as lib
+import pycps as lib
 
 PULSE_SHAPE_FILE_PATH = "tests/fixtures/unipolar-pulse-shape.dat"
 

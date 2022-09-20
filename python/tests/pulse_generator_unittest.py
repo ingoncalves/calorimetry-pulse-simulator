@@ -3,7 +3,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../build/python'))
 
 import unittest
-import pyCaloPulseSimulator as lib
+import pycps as lib
 
 class PulseGenerator(unittest.TestCase):
 
@@ -17,12 +17,12 @@ class PulseGenerator(unittest.TestCase):
         noise_mean = 0.01
         noise_std_dev = 0.1
 
-        pulse_generator = lib.PulseGenerator(self.pulse_shape)\
-                             .set_pedestal(pedestal)\
-                             .set_deformation_level(deformation_level)\
-                             .set_noise_params(noise_mean, noise_std_dev)\
-                             .set_amplitude_distribution(lib.PulseGenerator.UNIFORM_INT_DISTRIBUTION, [80, 90])\
-                             .set_phase_distribution(lib.PulseGenerator.NORMAL_DISTRIBUTION, [0, 4])
+        pulse_generator = lib.PulseGenerator(self.pulse_shape)
+        pulse_generator.set_pedestal(pedestal)
+        pulse_generator.set_deformation_level(deformation_level)
+        pulse_generator.set_noise_params(noise_mean, noise_std_dev)
+        pulse_generator.set_amplitude_distribution(lib.PulseGenerator.UNIFORM_INT_DISTRIBUTION, [80, 90])
+        pulse_generator.set_phase_distribution(lib.PulseGenerator.NORMAL_DISTRIBUTION, [0, 4])
 
         self.assertEqual(pulse_generator.get_pedestal(), pedestal)
         self.assertEqual(pulse_generator.get_deformation_level(), deformation_level)

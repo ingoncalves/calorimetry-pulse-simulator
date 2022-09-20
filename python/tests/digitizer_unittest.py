@@ -3,7 +3,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), '../../build/python'))
 
 import unittest
-import pyCaloPulseSimulator as lib
+import pycps as lib
 
 PULSE_SHAPE_FILE_PATH = "tests/fixtures/unipolar-pulse-shape.dat"
 
@@ -15,9 +15,9 @@ class Digitizer(unittest.TestCase):
         start_sampling_at_time = -75.0
 
         digitizer = lib.Digitizer()
-        digitizer.set_nsamples(n_samples)\
-                 .set_sampling_rate(sampling_rate)\
-                 .set_start_sampling_at_time(start_sampling_at_time)
+        digitizer.set_nsamples(n_samples)
+        digitizer.set_sampling_rate(sampling_rate)
+        digitizer.set_start_sampling_at_time(start_sampling_at_time)
 
         self.assertEqual(digitizer.get_nsamples(), n_samples)
         self.assertEqual(digitizer.get_sampling_rate(), sampling_rate)
