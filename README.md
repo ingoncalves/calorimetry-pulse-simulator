@@ -5,7 +5,7 @@ calorimetry signals with the ability to simulate phenomena such as electronic
 noise, signal pileup, phase shift, baseline, among others.
 
 Useful links:
- - [API Reference](https://ingoncalves.github.io/calo-pulse-simulator/)
+ - [API Reference](https://ingoncalves.github.io/calorimetry-pulse-simulator/)
  - [Examples](./docs/examples)
 
 ## Getting started
