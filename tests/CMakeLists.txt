@@ -1,3 +1,8 @@
+# Avoid warning about DOWNLOAD_EXTRACT_TIMESTAMP in CMake 3.24:
+if (CMAKE_VERSION VERSION_GREATER_EQUAL "3.24.0")
+  cmake_policy(SET CMP0135 NEW)
+endif()
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -18,4 +23,6 @@ include_directories(${INCLUDE_DIR})
 target_link_libraries(${BINARY} PUBLIC ${PROJECT_NAME} gtest_main pthread)
 
 include(GoogleTest)
-gtest_discover_tests(${BINARY})
+
+# C++ tests
+gtest_discover_tests(${BINARY} WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})

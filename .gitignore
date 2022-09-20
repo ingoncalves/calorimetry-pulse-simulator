@@ -33,3 +33,6 @@
 
 build
 .cache
+.vim
+__pycache__
+.DS_Store

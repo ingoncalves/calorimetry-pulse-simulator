@@ -9,6 +9,9 @@ insert_final_newline = true
 trim_trailing_whitespace = true
 quote_type = single
 
+[*.py]
+indent_size = 4
+
 [vcbuild.bat]
 end_of_line = crlf
 
