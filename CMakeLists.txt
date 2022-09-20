@@ -18,6 +18,7 @@ set(INCLUDE_DIR ${PROJECT_SOURCE_DIR}/include)
 enable_testing()
 add_subdirectory(lib)
 add_subdirectory(tests)
+add_subdirectory(docs)
 
 option(BUILD_PYTHON "Build Python SWIG module" ON)
 if(BUILD_PYTHON)

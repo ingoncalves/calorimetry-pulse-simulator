@@ -6,7 +6,7 @@ find_package(Python COMPONENTS Interpreter Development REQUIRED)
 if(Python_VERSION MATCHES "^2.*$" )
   set(CMAKE_SWIG_FLAGS -classic)
 else()
-  set(CMAKE_SWIG_FLAGS -py3)
+  set(CMAKE_SWIG_FLAGS -py3 -doxygen)
 endif()
 
 # SWIG
@@ -47,5 +47,4 @@ install(
 add_test(
   NAME pyTest_${PROJECT_NAME}
   COMMAND ${Python_EXECUTABLE} -m unittest discover -v -s ${CMAKE_CURRENT_SOURCE_DIR}/tests -p *.py
-  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
-  )
+  WORKING_DIRECTORY ${PROJECT_SOURCE_DIR})

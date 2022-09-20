@@ -1,8 +1,10 @@
-# Instructions for Unix based SO
+# Calo Pulse Simulator
 
-Requires [SWIG](http://www.swig.org), [CMake](https://cmake.org) version 3.8 and above (the SWIG module has changed in 3.8, so previous verions will require a few minor modiciations)
+## Instructions for Unix based SO
 
-1. Create  a build directory and make it the current dir
+Requires [SWIG](http://www.swig.org), [CMake](https://cmake.org) version 3.8, and [Doxygen](https://www.doxygen.nl/).
+
+1. Create a build directory and make it the current dir
 
 ```shell
 mkdir build
