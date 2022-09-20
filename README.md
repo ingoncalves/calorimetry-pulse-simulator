@@ -69,3 +69,15 @@ Might need to run `cmake ..` again if you installed Doxygen after running it.
 cmake ..
 make docs
 ```
+
+### Author
+
+**Guilherme Gonçalves**
+
+* [github/ingoncalves](https://github.com/ingoncalves)
+* [ggoncalves@iprj.uerj.br](mailto:ggoncalves@iprj.uerj.br)
+
+### License
+
+Copyright © 2022, [Guilherme Gonçalves](https://github.com/ingoncalves).
+Released under the [GNU GPL License](LICENSE).
