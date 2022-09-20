@@ -71,26 +71,27 @@ $(function() {
 <div class="title">IPulseShape.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef I_PULSE_SHAPE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define I_PULSE_SHAPE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="keyword">namespace </span>cps {</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classcps_1_1IPulseShape.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a>() {} </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classcps_1_1IPulseShape.html#acbd2b4c7cd63322552e2e06710e9e773">GetY</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; time) <span class="keyword">const</span> = 0; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classcps_1_1IPulseShape.html#a4f433fbb406502763ac3f583eb3af0c2">GetTMin</a>() <span class="keyword">const</span> = 0; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classcps_1_1IPulseShape.html#a6fd4f802ca973c01bd12633c1eab85e8">GetTMax</a>() <span class="keyword">const</span> = 0; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  };</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;}</div>
+<a href="IPulseShape_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef I_PULSE_SHAPE_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define I_PULSE_SHAPE_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* I_PULSE_SHAPE_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="keyword">namespace </span>cps {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classcps_1_1IPulseShape.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a>() {} </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classcps_1_1IPulseShape.html#acbd2b4c7cd63322552e2e06710e9e773">GetY</a>(<span class="keyword">const</span> <span class="keywordtype">double</span> &amp; time) <span class="keyword">const</span> = 0; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classcps_1_1IPulseShape.html#a4f433fbb406502763ac3f583eb3af0c2">GetTMin</a>() <span class="keyword">const</span> = 0; </div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="keyword">virtual</span> <span class="keywordtype">double</span> <a class="code" href="classcps_1_1IPulseShape.html#a6fd4f802ca973c01bd12633c1eab85e8">GetTMax</a>() <span class="keyword">const</span> = 0; </div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  };</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;}</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* I_PULSE_SHAPE_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
 <div class="ttc" id="aclasscps_1_1IPulseShape_html_a6fd4f802ca973c01bd12633c1eab85e8"><div class="ttname"><a href="classcps_1_1IPulseShape.html#a6fd4f802ca973c01bd12633c1eab85e8">cps::IPulseShape::GetTMax</a></div><div class="ttdeci">virtual double GetTMax() const =0</div><div class="ttdoc">Returns the maximum time of the pulse shape.</div></div>
-<div class="ttc" id="aclasscps_1_1IPulseShape_html"><div class="ttname"><a href="classcps_1_1IPulseShape.html">cps::IPulseShape</a></div><div class="ttdoc">An interface for pulse shapes.</div><div class="ttdef"><b>Definition:</b> IPulseShape.h:15</div></div>
+<div class="ttc" id="aclasscps_1_1IPulseShape_html"><div class="ttname"><a href="classcps_1_1IPulseShape.html">cps::IPulseShape</a></div><div class="ttdoc">An interface for pulse shapes.</div><div class="ttdef"><b>Definition:</b> IPulseShape.h:34</div></div>
 <div class="ttc" id="aclasscps_1_1IPulseShape_html_a4f433fbb406502763ac3f583eb3af0c2"><div class="ttname"><a href="classcps_1_1IPulseShape.html#a4f433fbb406502763ac3f583eb3af0c2">cps::IPulseShape::GetTMin</a></div><div class="ttdeci">virtual double GetTMin() const =0</div><div class="ttdoc">Returns the minimum time of the pulse shape.</div></div>
 <div class="ttc" id="aclasscps_1_1IPulseShape_html_acbd2b4c7cd63322552e2e06710e9e773"><div class="ttname"><a href="classcps_1_1IPulseShape.html#acbd2b4c7cd63322552e2e06710e9e773">cps::IPulseShape::GetY</a></div><div class="ttdeci">virtual double GetY(const double &amp;time) const =0</div><div class="ttdoc">Returns the amplitude of the pulse shape at the given time.</div></div>
 <!-- start footer part -->

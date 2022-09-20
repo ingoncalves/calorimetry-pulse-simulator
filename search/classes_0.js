@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['analogpulse_54',['AnalogPulse',['../classcps_1_1AnalogPulse.html',1,'cps']]]
+  ['analogpulse_66',['AnalogPulse',['../classcps_1_1AnalogPulse.html',1,'cps']]]
 ];

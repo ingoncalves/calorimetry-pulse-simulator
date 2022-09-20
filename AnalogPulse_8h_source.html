@@ -71,64 +71,66 @@ $(function() {
 <div class="title">AnalogPulse.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef ANALOG_PULSE_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define ANALOG_PULSE_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;IPulseShape.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">namespace </span>cps {</div>
-<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="classcps_1_1AnalogPulse.html">   21</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a></div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;  {</div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    <a class="code" href="classcps_1_1AnalogPulse.html#af67348eb9a6eea268b412f2000fe546d">AnalogPulse</a>(</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;      <span class="keyword">const</span> <a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a>* pulseShape = 0, </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;      <span class="keywordtype">double</span> amplitude = 1, </div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;      <span class="keywordtype">double</span> pedestal = 0, </div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;      <span class="keywordtype">double</span> phase = 0, </div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;      <span class="keywordtype">double</span> deformationLevel = 0, </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;      <span class="keywordtype">double</span> noiseMean = 0, </div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;      <span class="keywordtype">double</span> noiseStdDev = 0 </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    );</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classcps_1_1AnalogPulse.html#af67348eb9a6eea268b412f2000fe546d">AnalogPulse</a>(<span class="keyword">const</span> <a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a>&amp; source);</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="comment">// operators</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a>&amp; rhs) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a>&amp; rhs) <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    <span class="comment">// getters</span></div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcps_1_1AnalogPulse.html#a9140efe30112abb2813cc511a86a9ae2">GetSample</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; time) <span class="keyword">const</span>; </div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    <span class="keywordtype">double</span> GetAmplitude()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_amplitude; } </div>
-<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordtype">double</span> GetPhase()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_phase; } </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;    <span class="keywordtype">double</span> GetPedestal()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pedestal; } </div>
-<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;    <span class="keywordtype">double</span> GetDeformationLevel()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_deformationLevel; } </div>
-<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;    <span class="keywordtype">double</span> GetNoiseMean()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_noiseMean; } </div>
-<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    <span class="keywordtype">double</span> GetNoiseStdDev()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_noiseStdDev; } </div>
-<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a>* GetPulseShape()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pulseShape; } </div>
-<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;  <span class="keyword">private</span>:</div>
-<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a>* m_pulseShape; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordtype">double</span> m_amplitude; </div>
-<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keywordtype">double</span> m_pedestal; </div>
-<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    <span class="keywordtype">double</span> m_phase; </div>
-<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="keywordtype">double</span> m_deformationLevel; </div>
-<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">double</span> m_noiseMean; </div>
-<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">double</span> m_noiseStdDev; </div>
-<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;    <span class="keyword">mutable</span> std::default_random_engine m_generator; </div>
-<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160; </div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">double</span> GenerateDeformation(<span class="keywordtype">double</span> shapeSample) <span class="keyword">const</span>; </div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">double</span> GenerateNoise() <span class="keyword">const</span>; </div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;  };</div>
-<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;}</div>
-<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160; </div>
-<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ANALOG_PULSE_H */</span><span class="preprocessor"></span></div>
+<a href="AnalogPulse_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef ANALOG_PULSE_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define ANALOG_PULSE_H</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="IPulseShape_8h.html">IPulseShape.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;random&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#include &lt;iterator&gt;</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160; </div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">namespace </span>cps {</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classcps_1_1AnalogPulse.html">   40</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a></div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;  {</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <a class="code" href="classcps_1_1AnalogPulse.html#af67348eb9a6eea268b412f2000fe546d">AnalogPulse</a>(</div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;      <span class="keyword">const</span> <a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a>* pulseShape = 0, </div>
+<div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;      <span class="keywordtype">double</span> amplitude = 1, </div>
+<div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;      <span class="keywordtype">double</span> pedestal = 0, </div>
+<div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;      <span class="keywordtype">double</span> phase = 0, </div>
+<div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;      <span class="keywordtype">double</span> deformationLevel = 0, </div>
+<div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;      <span class="keywordtype">double</span> noiseMean = 0, </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;      <span class="keywordtype">double</span> noiseStdDev = 0 </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    );</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <a class="code" href="classcps_1_1AnalogPulse.html#af67348eb9a6eea268b412f2000fe546d">AnalogPulse</a>(<span class="keyword">const</span> <a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a>&amp; source);</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160; </div>
+<div class="line"><a name="l00055"></a><span class="lineno">   55</span>&#160;    <span class="comment">// operators</span></div>
+<div class="line"><a name="l00056"></a><span class="lineno">   56</span>&#160;    <span class="keywordtype">bool</span> operator==(<span class="keyword">const</span> <a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00057"></a><span class="lineno">   57</span>&#160;    <span class="keywordtype">bool</span> operator!=(<span class="keyword">const</span> <a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a>&amp; rhs) <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160; </div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;    <span class="comment">// getters</span></div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    <span class="keywordtype">double</span> <a class="code" href="classcps_1_1AnalogPulse.html#a9140efe30112abb2813cc511a86a9ae2">GetSample</a>(<span class="keyword">const</span> <span class="keywordtype">double</span>&amp; time) <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;    <span class="keywordtype">double</span> GetAmplitude()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_amplitude; } </div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="keywordtype">double</span> GetPhase()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_phase; } </div>
+<div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordtype">double</span> GetPedestal()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pedestal; } </div>
+<div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;    <span class="keywordtype">double</span> GetDeformationLevel()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_deformationLevel; } </div>
+<div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;    <span class="keywordtype">double</span> GetNoiseMean()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_noiseMean; } </div>
+<div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    <span class="keywordtype">double</span> GetNoiseStdDev()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_noiseStdDev; } </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a>* GetPulseShape()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> m_pulseShape; } </div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;  <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keyword">const</span> <a class="code" href="classcps_1_1IPulseShape.html">IPulseShape</a>* m_pulseShape; </div>
+<div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;    <span class="keywordtype">double</span> m_amplitude; </div>
+<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;    <span class="keywordtype">double</span> m_pedestal; </div>
+<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;    <span class="keywordtype">double</span> m_phase; </div>
+<div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    <span class="keywordtype">double</span> m_deformationLevel; </div>
+<div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    <span class="keywordtype">double</span> m_noiseMean; </div>
+<div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordtype">double</span> m_noiseStdDev; </div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keyword">mutable</span> std::default_random_engine m_generator; </div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
+<div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordtype">double</span> GenerateDeformation(<span class="keywordtype">double</span> shapeSample) <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    <span class="keywordtype">double</span> GenerateNoise() <span class="keyword">const</span>; </div>
+<div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;  };</div>
+<div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;}</div>
+<div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160; </div>
+<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* ANALOG_PULSE_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclasscps_1_1IPulseShape_html"><div class="ttname"><a href="classcps_1_1IPulseShape.html">cps::IPulseShape</a></div><div class="ttdoc">An interface for pulse shapes.</div><div class="ttdef"><b>Definition:</b> IPulseShape.h:15</div></div>
-<div class="ttc" id="aclasscps_1_1AnalogPulse_html_a9140efe30112abb2813cc511a86a9ae2"><div class="ttname"><a href="classcps_1_1AnalogPulse.html#a9140efe30112abb2813cc511a86a9ae2">cps::AnalogPulse::GetSample</a></div><div class="ttdeci">double GetSample(const double &amp;time) const</div><div class="ttdoc">Returns the pulse amplitude at the given time.</div><div class="ttdef"><b>Definition:</b> AnalogPulse.cpp:50</div></div>
-<div class="ttc" id="aclasscps_1_1AnalogPulse_html"><div class="ttname"><a href="classcps_1_1AnalogPulse.html">cps::AnalogPulse</a></div><div class="ttdoc">An analog pulse built from a pulse shape.</div><div class="ttdef"><b>Definition:</b> AnalogPulse.h:21</div></div>
-<div class="ttc" id="aclasscps_1_1AnalogPulse_html_af67348eb9a6eea268b412f2000fe546d"><div class="ttname"><a href="classcps_1_1AnalogPulse.html#af67348eb9a6eea268b412f2000fe546d">cps::AnalogPulse::AnalogPulse</a></div><div class="ttdeci">AnalogPulse(const IPulseShape *pulseShape=0, double amplitude=1, double pedestal=0, double phase=0, double deformationLevel=0, double noiseMean=0, double noiseStdDev=0)</div><div class="ttdef"><b>Definition:</b> AnalogPulse.cpp:6</div></div>
+<div class="ttc" id="aclasscps_1_1IPulseShape_html"><div class="ttname"><a href="classcps_1_1IPulseShape.html">cps::IPulseShape</a></div><div class="ttdoc">An interface for pulse shapes.</div><div class="ttdef"><b>Definition:</b> IPulseShape.h:34</div></div>
+<div class="ttc" id="aclasscps_1_1AnalogPulse_html_a9140efe30112abb2813cc511a86a9ae2"><div class="ttname"><a href="classcps_1_1AnalogPulse.html#a9140efe30112abb2813cc511a86a9ae2">cps::AnalogPulse::GetSample</a></div><div class="ttdeci">double GetSample(const double &amp;time) const</div><div class="ttdoc">Returns the pulse amplitude at the given time.</div><div class="ttdef"><b>Definition:</b> AnalogPulse.cpp:69</div></div>
+<div class="ttc" id="aclasscps_1_1AnalogPulse_html"><div class="ttname"><a href="classcps_1_1AnalogPulse.html">cps::AnalogPulse</a></div><div class="ttdoc">An analog pulse built from a pulse shape.</div><div class="ttdef"><b>Definition:</b> AnalogPulse.h:40</div></div>
+<div class="ttc" id="aclasscps_1_1AnalogPulse_html_af67348eb9a6eea268b412f2000fe546d"><div class="ttname"><a href="classcps_1_1AnalogPulse.html#af67348eb9a6eea268b412f2000fe546d">cps::AnalogPulse::AnalogPulse</a></div><div class="ttdeci">AnalogPulse(const IPulseShape *pulseShape=0, double amplitude=1, double pedestal=0, double phase=0, double deformationLevel=0, double noiseMean=0, double noiseStdDev=0)</div><div class="ttdef"><b>Definition:</b> AnalogPulse.cpp:25</div></div>
+<div class="ttc" id="aIPulseShape_8h_html"><div class="ttname"><a href="IPulseShape_8h.html">IPulseShape.h</a></div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">

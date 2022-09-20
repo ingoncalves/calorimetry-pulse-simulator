@@ -71,26 +71,28 @@ $(function() {
 <div class="title">IDigitizer.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef I_DIGITIZER_H</span></div>
-<div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define I_DIGITIZER_H</span></div>
-<div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;AnalogPulse.h&quot;</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="keyword">namespace </span>cps {</div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="classcps_1_1IDigitizer.html">   15</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcps_1_1IDigitizer.html">IDigitizer</a></div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;  {</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;  <span class="keyword">public</span>:</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcps_1_1IDigitizer.html">IDigitizer</a>() {} </div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;double&gt; <a class="code" href="classcps_1_1IDigitizer.html#aaf72905e99ee7e0d1b9b0675fdaf37c0">Digitize</a>(<span class="keyword">const</span> <a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a> * pulse) <span class="keyword">const</span> = 0; </div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;  };</div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;}</div>
+<a href="IDigitizer_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#ifndef I_DIGITIZER_H</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define I_DIGITIZER_H</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* I_DIGITIZER_H */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="AnalogPulse_8h.html">AnalogPulse.h</a>&quot;</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#include &lt;vector&gt;</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">namespace </span>cps {</div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classcps_1_1IDigitizer.html">   34</a></span>&#160;<span class="keyword">class </span><a class="code" href="classcps_1_1IDigitizer.html">IDigitizer</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;  {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;  <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;    <span class="keyword">virtual</span> ~<a class="code" href="classcps_1_1IDigitizer.html">IDigitizer</a>() {} </div>
+<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keyword">virtual</span> std::vector&lt;double&gt; <a class="code" href="classcps_1_1IDigitizer.html#aaf72905e99ee7e0d1b9b0675fdaf37c0">Digitize</a>(<span class="keyword">const</span> <a class="code" href="classcps_1_1AnalogPulse.html">AnalogPulse</a> * pulse) <span class="keyword">const</span> = 0; </div>
+<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;  };</div>
+<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;}</div>
+<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* I_DIGITIZER_H */</span><span class="preprocessor"></span></div>
 </div><!-- fragment --></div><!-- contents -->
-<div class="ttc" id="aclasscps_1_1IDigitizer_html"><div class="ttname"><a href="classcps_1_1IDigitizer.html">cps::IDigitizer</a></div><div class="ttdoc">An interface for digitizers.</div><div class="ttdef"><b>Definition:</b> IDigitizer.h:15</div></div>
+<div class="ttc" id="aclasscps_1_1IDigitizer_html"><div class="ttname"><a href="classcps_1_1IDigitizer.html">cps::IDigitizer</a></div><div class="ttdoc">An interface for digitizers.</div><div class="ttdef"><b>Definition:</b> IDigitizer.h:34</div></div>
 <div class="ttc" id="aclasscps_1_1IDigitizer_html_aaf72905e99ee7e0d1b9b0675fdaf37c0"><div class="ttname"><a href="classcps_1_1IDigitizer.html#aaf72905e99ee7e0d1b9b0675fdaf37c0">cps::IDigitizer::Digitize</a></div><div class="ttdeci">virtual std::vector&lt; double &gt; Digitize(const AnalogPulse *pulse) const =0</div><div class="ttdoc">Digitizes the given pulse.</div></div>
-<div class="ttc" id="aclasscps_1_1AnalogPulse_html"><div class="ttname"><a href="classcps_1_1AnalogPulse.html">cps::AnalogPulse</a></div><div class="ttdoc">An analog pulse built from a pulse shape.</div><div class="ttdef"><b>Definition:</b> AnalogPulse.h:21</div></div>
+<div class="ttc" id="aAnalogPulse_8h_html"><div class="ttname"><a href="AnalogPulse_8h.html">AnalogPulse.h</a></div></div>
+<div class="ttc" id="aclasscps_1_1AnalogPulse_html"><div class="ttname"><a href="classcps_1_1AnalogPulse.html">cps::AnalogPulse</a></div><div class="ttdoc">An analog pulse built from a pulse shape.</div><div class="ttdef"><b>Definition:</b> AnalogPulse.h:40</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
