@@ -52,7 +52,7 @@ PulseGenerator& PulseGenerator::SetPhaseDistribution(RandomDistribution distribu
   return *this;
 }
 
-double PulseGenerator::GenerateRandomNumber(RandomDistribution distribution, const std::vector<double> & params ) const {
+double PulseGenerator::GenerateRandomNumber(RandomDistribution distribution, const std::vector<double> & params) const {
   switch (distribution) {
     case NORMAL_DISTRIBUTION:
       {
@@ -71,7 +71,7 @@ double PulseGenerator::GenerateRandomNumber(RandomDistribution distribution, con
       }
     case UNIFORM_INT_DISTRIBUTION:
       {
-        std::uniform_int_distribution<double> distribution(params[0], params[1]);
+        std::uniform_int_distribution<long> distribution(params[0], params[1]);
         return distribution(m_generator);
       }
     default:
