@@ -103,7 +103,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a3f8b273eb729864e5fe698230e830612"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c4232e8477ba7d65d2f0d58d7c46444"><td class="memItemLeft" align="right" valign="top"><a id="a9c4232e8477ba7d65d2f0d58d7c46444"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcps_1_1TextFilePulseShape.html#a9c4232e8477ba7d65d2f0d58d7c46444">GetResolution</a> () const</td></tr>
-<tr class="memdesc:a9c4232e8477ba7d65d2f0d58d7c46444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the resolution of the pulse shape in nanoseconds. <br /></td></tr>
+<tr class="memdesc:a9c4232e8477ba7d65d2f0d58d7c46444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the resolution of the pulse shape. <br /></td></tr>
 <tr class="separator:a9c4232e8477ba7d65d2f0d58d7c46444"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abb27ebb165d641d28d9f172eaa057691"><td class="memItemLeft" align="right" valign="top"><a id="abb27ebb165d641d28d9f172eaa057691"></a>
 unsigned int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcps_1_1TextFilePulseShape.html#abb27ebb165d641d28d9f172eaa057691">GetSize</a> () const</td></tr>
@@ -132,7 +132,7 @@ Protected Member Functions</h2></td></tr>
 Protected Attributes</h2></td></tr>
 <tr class="memitem:ac009e38bccfdd509b47bfd46c433a1f3"><td class="memItemLeft" align="right" valign="top"><a id="ac009e38bccfdd509b47bfd46c433a1f3"></a>
 float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcps_1_1TextFilePulseShape.html#ac009e38bccfdd509b47bfd46c433a1f3">m_resolution</a></td></tr>
-<tr class="memdesc:ac009e38bccfdd509b47bfd46c433a1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resolution of the pulse shape in nanoseconds. <br /></td></tr>
+<tr class="memdesc:ac009e38bccfdd509b47bfd46c433a1f3"><td class="mdescLeft">&#160;</td><td class="mdescRight">The resolution of the pulse shape. <br /></td></tr>
 <tr class="separator:ac009e38bccfdd509b47bfd46c433a1f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab7e2cf021f13db35e7509eb4964618bb"><td class="memItemLeft" align="right" valign="top"><a id="ab7e2cf021f13db35e7509eb4964618bb"></a>
 const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcps_1_1TextFilePulseShape.html#ab7e2cf021f13db35e7509eb4964618bb">m_shaperFile</a></td></tr>
@@ -149,7 +149,7 @@ std::vector&lt; double &gt;&#160;</td><td class="memItemRight" valign="bottom"><
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A pulse shape that is read from a text file. </p>
-<p>The text file should contain two columns of numbers. The first column is the time in nanoseconds, and the second column is the amplitude. The amplitude should be normalized to 1.0 at the peak of the pulse. </p>
+<p>The text file should contain two columns of numbers. The first column is the time, and the second column is the amplitude. The amplitude should be normalized to 1.0 at the peak of the pulse. </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1a07fc37298c48571e354c64e1b472c1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1a07fc37298c48571e354c64e1b472c1">&#9670;&nbsp;</a></span>ReadShaper()</h2>
