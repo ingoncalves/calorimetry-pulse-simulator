@@ -31,8 +31,8 @@ namespace cps {
  * @brief A pulse shape that is read from a text file.
  *
  * The text file should contain two columns of numbers. The first column is the
- * time in nanoseconds, and the second column is the amplitude. The amplitude
- * should be normalized to 1.0 at the peak of the pulse.
+ * time, and the second column is the amplitude. The amplitude should be
+ * normalized to 1.0 at the peak of the pulse.
  */
 class TextFilePulseShape: public IPulseShape
   {
@@ -40,7 +40,7 @@ class TextFilePulseShape: public IPulseShape
     TextFilePulseShape(const char * shaperFile); //!< Constructor
     ~TextFilePulseShape(); //!< Destructor
 
-    float               GetResolution() const; //!< Returns the resolution of the pulse shape in nanoseconds.
+    float               GetResolution() const; //!< Returns the resolution of the pulse shape
     unsigned int        GetSize() const; //!< Returns the number of points in the pulse shape
     std::vector<double> GetTimeSeries() const { return m_tSeries; } //!< Returns the time series of the pulse shape
     std::vector<double> GetYSeries() const { return m_ySeries; } //!< Returns the ampltitude series of the pulse shape
@@ -51,7 +51,7 @@ class TextFilePulseShape: public IPulseShape
   protected:
     void ReadShaper(); //!< Reads the pulse shape from the text file
 
-    float m_resolution; //!< The resolution of the pulse shape in nanoseconds
+    float m_resolution; //!< The resolution of the pulse shape
     const char * m_shaperFile; //!< The path to the text file containing the pulse shape
     std::vector<double> m_tSeries; //!< The time series
     std::vector<double> m_ySeries; //!< The amplitude series
