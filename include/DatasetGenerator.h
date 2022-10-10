@@ -46,6 +46,7 @@ class DatasetGenerator;
  * index, and the phase vector contains the truth phase value at a given index.
  */
 struct ContinuousDataset {
+  std::vector<double> time; //!< The time series of the dataset
   std::vector<double> samples; //!< The samples of the dataset
   std::vector<double> amplitudes; //!< The amplitudes of the pulses in the dataset
   std::vector<double> phases; //!< The phases of the pulses in the dataset
@@ -64,6 +65,7 @@ struct ContinuousDataset {
  * and the phase vector contains the truth phase value at a given window index.
  */
 struct SlicedDataset {
+  std::vector<std::vector<double>> time;
   std::vector<std::vector<double>> samples;
   std::vector<std::vector<double>> amplitudes;
   std::vector<std::vector<double>> phases;

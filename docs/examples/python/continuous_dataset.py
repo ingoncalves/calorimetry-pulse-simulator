@@ -28,20 +28,19 @@ def main():
     """
     n_events = 1000
     pedestal = 50
-    pileup_luminosity = 100.0
+    pileup_luminosity = 600.0
     pileup_occupancy = .1
 
-    samples, amplitudes = __setup_dataset_generator(n_events, pileup_luminosity, pileup_occupancy, pedestal)
-
+    time, samples, amplitudes = __setup_dataset_generator(n_events, pileup_luminosity, pileup_occupancy, pedestal)
     plt.grid(zorder=0, linestyle='--')
-    markerline, stemline, _, = plt.stem(range(0, n_events), samples, linefmt="-",  basefmt=" ", label="samples")
+    markerline, stemline, _, = plt.stem(time, samples, linefmt="-",  basefmt=" ", label="samples")
     plt.setp(markerline, markersize = 2)
     plt.setp(markerline, color="black")
     plt.setp(stemline, color="black")
     plt.setp(stemline, linewidth=1)
 
     y_amplitudes = amplitudes[amplitudes > 0] + pedestal
-    x_amplitudes = np.array(range(0, n_events))[amplitudes > 0]
+    x_amplitudes = time[amplitudes > 0]
     plt.plot(x_amplitudes, y_amplitudes, ".", label="amplitudes", color="red")
 
     plt.legend()
@@ -72,9 +71,10 @@ def __setup_dataset_generator(n_events, pileup_luminosity, pileup_occupancy, ped
     ])
 
     dataset = dataset_generator.generate_continuous_dataset(n_events)
+    time = np.array(dataset.time)
     samples = np.array(dataset.samples)
     amplitudes = np.array(dataset.amplitudes)
-    return samples, amplitudes
+    return time, samples, amplitudes
 
 
 if __name__ == '__main__':
