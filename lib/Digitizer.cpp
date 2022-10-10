@@ -33,19 +33,16 @@ Digitizer::Digitizer(unsigned int nSamples, double samplingRate, double startSam
   m_startSamplingAtTime(startSamplingAtTime)
 {}
 
-Digitizer& Digitizer::SetNSamples(unsigned int nSamples) {
+void Digitizer::SetNSamples(unsigned int nSamples) {
   m_nSamples = nSamples;
-  return *this;
 }
 
-Digitizer& Digitizer::SetSamplingRate(double samplingRate) {
+void Digitizer::SetSamplingRate(double samplingRate) {
   m_samplingRate = samplingRate;
-  return *this;
 }
 
-Digitizer& Digitizer::SetStartSamplingAtTime(double startSamplingAtTime) {
+void Digitizer::SetStartSamplingAtTime(double startSamplingAtTime) {
   m_startSamplingAtTime = startSamplingAtTime;
-  return *this;
 }
 
 std::vector<double> Digitizer::Digitize(const AnalogPulse* pulse) const {

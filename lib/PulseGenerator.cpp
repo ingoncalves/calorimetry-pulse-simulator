@@ -43,32 +43,27 @@ AnalogPulse* PulseGenerator::GeneratePulse(double amplitude, double phase) const
   return new AnalogPulse(m_pulseShape, amplitude, m_pedestal, phase, m_deformationLevel, m_noiseMean, m_noiseStdDev);
 }
 
-PulseGenerator& PulseGenerator::SetPedestal(double pedestal) {
+void PulseGenerator::SetPedestal(double pedestal) {
   m_pedestal = pedestal;
-  return *this;
 }
 
-PulseGenerator& PulseGenerator::SetDeformationLevel(double deformationLevel) {
+void PulseGenerator::SetDeformationLevel(double deformationLevel) {
   m_deformationLevel = deformationLevel;
-  return *this;
 }
 
-PulseGenerator& PulseGenerator::SetNoiseParams(double noiseMean, double noiseStdDev) {
+void PulseGenerator::SetNoiseParams(double noiseMean, double noiseStdDev) {
   m_noiseMean = noiseMean;
   m_noiseStdDev = noiseStdDev;
-  return *this;
 }
 
-PulseGenerator& PulseGenerator::SetAmplitudeDistribution(RandomDistribution distribution, const std::vector<double> & params) {
+void PulseGenerator::SetAmplitudeDistribution(RandomDistribution distribution, const std::vector<double> & params) {
   m_amplitudeDistribution = distribution;
   m_amplitudeDistributionParams = std::vector<double>(params);
-  return *this;
 }
 
-PulseGenerator& PulseGenerator::SetPhaseDistribution(RandomDistribution distribution, const std::vector<double> & params) {
+void PulseGenerator::SetPhaseDistribution(RandomDistribution distribution, const std::vector<double> & params) {
   m_phaseDistribution = distribution;
   m_phaseDistributionParams = std::vector<double>(params);
-  return *this;
 }
 
 double PulseGenerator::GenerateRandomNumber(RandomDistribution distribution, const std::vector<double> & params) const {

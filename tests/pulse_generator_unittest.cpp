@@ -35,7 +35,8 @@ TEST(PulseGenerator, Pedestal) {
   EXPECT_EQ(pulseGenerator.GetPedestal(), 0.0);
   // new value
   double pedestal = 50;
-  EXPECT_EQ(pulseGenerator.SetPedestal(pedestal).GetPedestal(), pedestal);
+  pulseGenerator.SetPedestal(pedestal);
+  EXPECT_EQ(pulseGenerator.GetPedestal(), pedestal);
 }
 
 TEST(PulseGenerator, DeformationLevel) {
@@ -44,7 +45,8 @@ TEST(PulseGenerator, DeformationLevel) {
   EXPECT_EQ(pulseGenerator.GetDeformationLevel(), 0.0);
   // new value
   double deformationLevel = 0.1;
-  EXPECT_EQ(pulseGenerator.SetDeformationLevel(deformationLevel).GetDeformationLevel(), deformationLevel);
+  pulseGenerator.SetDeformationLevel(deformationLevel);
+  EXPECT_EQ(pulseGenerator.GetDeformationLevel(), deformationLevel);
 }
 
 TEST(PulseGenerator, NoiseParams) {
@@ -86,9 +88,9 @@ TEST(PulseGenerator, PhaseDistribution) {
 }
 
 TEST(PulseGenerator, GeneratePulse) {
-  PulseGenerator pulseGenerator = PulseGenerator(pulseShape)
-    .SetAmplitudeDistribution(PulseGenerator::UNIFORM_INT_DISTRIBUTION, {80, 90})
-    .SetPhaseDistribution(PulseGenerator::UNIFORM_INT_DISTRIBUTION, {-4, 4});
+  PulseGenerator pulseGenerator = PulseGenerator(pulseShape);
+  pulseGenerator.SetAmplitudeDistribution(PulseGenerator::UNIFORM_INT_DISTRIBUTION, {80, 90});
+  pulseGenerator.SetPhaseDistribution(PulseGenerator::UNIFORM_INT_DISTRIBUTION, {-4, 4});
 
   AnalogPulse* analogPulse;
 

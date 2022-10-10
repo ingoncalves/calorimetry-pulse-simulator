@@ -63,11 +63,12 @@ class PulseGenerator
     RandomDistribution  GetPhaseDistribution() const { return m_phaseDistribution; } //!< Returns the phase distribution
     std::vector<double> GetPhaseDistributionParams() const { return m_phaseDistributionParams; } //!< Returns the phase distribution parameters
     // setters
-    PulseGenerator&     SetPedestal(double pedestal); //!< Sets the pulse pedestal
-    PulseGenerator&     SetDeformationLevel(double deformationLevel); //!< Sets the pulse deformation level
-    PulseGenerator&     SetNoiseParams(double noiseMean, double noiseStdDev); //!< Sets the noise parameters
-    PulseGenerator&     SetAmplitudeDistribution(RandomDistribution distribution, const std::vector<double> & params); //!< Sets the amplitude distribution
-    PulseGenerator&     SetPhaseDistribution(RandomDistribution distribution, const std::vector<double> & params); //!< Sets the phase distribution
+    void                SetPedestal(double pedestal); //!< Sets the pulse pedestal
+    void                SetDeformationLevel(double deformationLevel); //!< Sets the pulse deformation level
+    void                SetNoiseParams(double noiseMean, double noiseStdDev); //!< Sets the noise parameters
+    void                SetAmplitudeDistribution(RandomDistribution distribution, const std::vector<double> & params); //!< Sets the amplitude distribution
+    void                SetPhaseDistribution(RandomDistribution distribution, const std::vector<double> & params); //!< Sets the phase distribution
+    // methods
     AnalogPulse*        GeneratePulse() const; //!< Generates a pulse
     AnalogPulse*        GeneratePulse(double amplitude, double phase) const; //!< Generates a pulse with the given amplitude and phase
 
