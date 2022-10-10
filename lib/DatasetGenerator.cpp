@@ -73,15 +73,15 @@ const SlicedDataset* DatasetGenerator::GenerateSlicedDataset(unsigned int nSlice
 
   for (unsigned int i = 0; i < nSlices; i++) {
     std::vector<double> samples(sliceSize);
-    std::vector<double> ampltiudes(sliceSize);
+    std::vector<double> amplitudes(sliceSize);
     std::vector<double> phases(sliceSize);
     for (unsigned int j = 0; j < sliceSize; j++) {
       samples[j] = continuousDataset->samples[i * sliceSize + j];
-      ampltiudes[j] = continuousDataset->amplitudes[i * sliceSize + j];
+      amplitudes[j] = continuousDataset->amplitudes[i * sliceSize + j];
       phases[j] = continuousDataset->phases[i * sliceSize + j];
     }
     slicedSamples[i] = samples;
-    slicedAmpltiudes[i] = ampltiudes;
+    slicedAmpltiudes[i] = amplitudes;
     slicedPhases[i] = phases;
   }
 
@@ -121,7 +121,7 @@ const ContinuousDataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*
   unsigned int nEvents = pulses.size();
 
   std::vector<double> samples(nEvents, m_pulseGenerator->GetPedestal());
-  std::vector<double> ampltiudes(nEvents, 0);
+  std::vector<double> amplitudes(nEvents, 0);
   std::vector<double> phases(nEvents, 0);
 
   for (unsigned int n = 0; n < nEvents; n++) {
@@ -130,7 +130,7 @@ const ContinuousDataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*
     auto pulse = pulses[n];
     if (!pulse) continue;
 
-    ampltiudes[n] = pulse->GetAmplitude();
+    amplitudes[n] = pulse->GetAmplitude();
     phases[n] = pulse->GetPhase();
 
     double fromTime = pulse->GetPulseShape()->GetTMin();
@@ -151,7 +151,7 @@ const ContinuousDataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*
 
   return new ContinuousDataset{
     samples = samples,
-    ampltiudes = ampltiudes,
+    amplitudes = amplitudes,
     phases = phases,
   };
 }
