@@ -18,12 +18,12 @@
  * CPS. If not, see <https://www.gnu.org/licenses/>.
  */
 #include "DatasetGenerator.h"
+#include "Random.h"
 #include <stdlib.h>
 
 using namespace cps;
 
 DatasetGenerator::DatasetGenerator() :
-  m_randomEngine(),
   m_pulseGenerator(nullptr),
   m_noiseMean(0),
   m_noiseStdDev(0),
@@ -161,6 +161,7 @@ const ContinuousDataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*
 
 double DatasetGenerator::GenerateNoise() const {
   if (m_noiseMean == 0 && m_noiseStdDev == 0) return 0;
+  std::default_random_engine& randomEngine = Random::GetEngine();
   std::normal_distribution<double> distribution(m_noiseMean, m_noiseStdDev);
-  return distribution(m_randomEngine);
+  return distribution(randomEngine);
 }

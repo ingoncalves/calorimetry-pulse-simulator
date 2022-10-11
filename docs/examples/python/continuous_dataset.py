@@ -20,12 +20,13 @@
 
 import numpy as np
 import matplotlib.pyplot as plt
-from pycps import DatasetGenerator, TextFilePulseShape, PulseGenerator
+from pycps import DatasetGenerator, TextFilePulseShape, PulseGenerator, Random
 
 def main():
     """
     main function
     """
+    Random.seed(80)
     n_events = 1000
     pedestal = 50
     pileup_luminosity = 600.0

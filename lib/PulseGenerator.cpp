@@ -18,11 +18,11 @@
  * CPS. If not, see <https://www.gnu.org/licenses/>.
  */
 #include "PulseGenerator.h"
+#include "Random.h"
 
 using namespace cps;
 
 PulseGenerator::PulseGenerator(const IPulseShape* pulseShape) :
-  m_generator(),
   m_pulseShape(pulseShape),
   m_pedestal(0),
   m_deformationLevel(0),
@@ -67,26 +67,27 @@ void PulseGenerator::SetPhaseDistribution(RandomDistribution distribution, const
 }
 
 double PulseGenerator::GenerateRandomNumber(RandomDistribution distribution, const std::vector<double> & params) const {
+  std::default_random_engine& randomEngine = Random::GetEngine();
   switch (distribution) {
     case NORMAL_DISTRIBUTION:
       {
         std::normal_distribution<double> distribution(params[0], params[1]);
-        return distribution(m_generator);
+        return distribution(randomEngine);
       }
     case EXPONENTIAL_DISTRIBUTION:
       {
         std::exponential_distribution<double> distribution(params[0]);
-        return distribution(m_generator);
+        return distribution(randomEngine);
       }
     case UNIFORM_REAL_DISTRIBUTION:
       {
         std::uniform_real_distribution<double> distribution(params[0], params[1]);
-        return distribution(m_generator);
+        return distribution(randomEngine);
       }
     case UNIFORM_INT_DISTRIBUTION:
       {
         std::uniform_int_distribution<long> distribution(params[0], params[1]);
-        return distribution(m_generator);
+        return distribution(randomEngine);
       }
     default:
       return 0;
