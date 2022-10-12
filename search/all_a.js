@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['randomdistribution_42',['RandomDistribution',['../classcps_1_1PulseGenerator.html#a3ad9e15df954c839fc0ccde9d46604ea',1,'cps::PulseGenerator']]],
-  ['readshaper_43',['ReadShaper',['../classcps_1_1TextFilePulseShape.html#a1a07fc37298c48571e354c64e1b472c1',1,'cps::TextFilePulseShape']]]
+  ['phases_40',['phases',['../structcps_1_1ContinuousDataset.html#ae77948058bc57a4e71c6e8a2114eaadb',1,'cps::ContinuousDataset']]],
+  ['pulsegenerator_41',['PulseGenerator',['../classcps_1_1PulseGenerator.html',1,'cps::PulseGenerator'],['../classcps_1_1PulseGenerator.html#a11080b9fd59149a8b805c9bdd05bb850',1,'cps::PulseGenerator::PulseGenerator()']]],
+  ['pulsegenerator_2ecpp_42',['PulseGenerator.cpp',['../PulseGenerator_8cpp.html',1,'']]],
+  ['pulsegenerator_2eh_43',['PulseGenerator.h',['../PulseGenerator_8h.html',1,'']]]
 ];

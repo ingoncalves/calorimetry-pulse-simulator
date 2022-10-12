@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['_7edatasetgenerator_63',['~DatasetGenerator',['../classcps_1_1DatasetGenerator.html#a1b1bdf239be26662c83e62e969dee60c',1,'cps::DatasetGenerator']]],
-  ['_7edigitizer_64',['~Digitizer',['../classcps_1_1Digitizer.html#a41df56fa2d1fc7d6d3c06684bb59c9f1',1,'cps::Digitizer']]],
-  ['_7epulsegenerator_65',['~PulseGenerator',['../classcps_1_1PulseGenerator.html#a2104084b9284cfded51945ca077ea2ee',1,'cps::PulseGenerator']]],
-  ['_7etextfilepulseshape_66',['~TextFilePulseShape',['../classcps_1_1TextFilePulseShape.html#a3f8b273eb729864e5fe698230e830612',1,'cps::TextFilePulseShape']]]
+  ['uniform_5fint_5fdistribution_67',['UNIFORM_INT_DISTRIBUTION',['../classcps_1_1PulseGenerator.html#a3ad9e15df954c839fc0ccde9d46604eaa51646e609951ef8f88ae50fd1451215d',1,'cps::PulseGenerator']]],
+  ['uniform_5freal_5fdistribution_68',['UNIFORM_REAL_DISTRIBUTION',['../classcps_1_1PulseGenerator.html#a3ad9e15df954c839fc0ccde9d46604eaa0079bc174338552cde5ee4eccf19cd2f',1,'cps::PulseGenerator']]]
 ];

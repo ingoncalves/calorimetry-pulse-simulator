@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['uniform_5fint_5fdistribution_61',['UNIFORM_INT_DISTRIBUTION',['../classcps_1_1PulseGenerator.html#a3ad9e15df954c839fc0ccde9d46604eaa51646e609951ef8f88ae50fd1451215d',1,'cps::PulseGenerator']]],
-  ['uniform_5freal_5fdistribution_62',['UNIFORM_REAL_DISTRIBUTION',['../classcps_1_1PulseGenerator.html#a3ad9e15df954c839fc0ccde9d46604eaa0079bc174338552cde5ee4eccf19cd2f',1,'cps::PulseGenerator']]]
+  ['textfilepulseshape_63',['TextFilePulseShape',['../classcps_1_1TextFilePulseShape.html',1,'cps::TextFilePulseShape'],['../classcps_1_1TextFilePulseShape.html#aeb2d8b906111476be54bbf44ea8454b2',1,'cps::TextFilePulseShape::TextFilePulseShape()']]],
+  ['textfilepulseshape_2ecpp_64',['TextFilePulseShape.cpp',['../TextFilePulseShape_8cpp.html',1,'']]],
+  ['textfilepulseshape_2eh_65',['TextFilePulseShape.h',['../TextFilePulseShape_8h.html',1,'']]],
+  ['time_66',['time',['../structcps_1_1ContinuousDataset.html#ac6d49827988abc4b91147e4a78146007',1,'cps::ContinuousDataset']]]
 ];
