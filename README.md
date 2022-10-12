@@ -15,26 +15,29 @@ Please, follow the instructions for Unix based SO. Requires
 
 1. Create a build directory and make it the current directory
 
-```shell
+```sh
 mkdir build
 cd build
 ```
 
 2. Configure
 
-```shell
+```sh
 cmake ..
+
+# or, if you don't want to generate the Python interface
+cmake -DBUILD_PYTHON=OFF ..
 ```
 
 3. Build
 
-```shell
+```sh
 make
 ```
 
 4. Install
 
-```shell
+```sh
 make install
 ```
 
@@ -261,7 +264,8 @@ Below is some useful information for developers.
 
 To run the automated tests, go the `build` folder and run
 
-```shell
+```sh
+cmake -DBUILD_TESTS=ON ..
 ctest
 ```
 
@@ -271,8 +275,8 @@ ctest
 Requires [Doxygen](https://www.doxygen.nl/).
 Might need to run `cmake ..` again if you installed Doxygen after running it.
 
-```shell
-cmake ..
+```sh
+cmake -DBUILD_DOCS=ON ..
 make docs
 ```
 
