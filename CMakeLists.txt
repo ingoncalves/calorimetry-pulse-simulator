@@ -4,7 +4,7 @@ include(ExternalProject)
 # Adding customized cmake module for building boost
 list(APPEND CMAKE_MODULE_PATH  "${CMAKE_SOURCE_DIR}/cmake/Modules/")
 
-project(cps VERSION 0.0.0 DESCRIPTION "Calorimeter Pulse Simulator Library")
+project(cps VERSION 1.0.0 DESCRIPTION "Calorimeter Pulse Simulator Library")
 option(BUILD_TESTS "Build tests" OFF)
 option(BUILD_DOCS "Build docs" OFF)
 option(BUILD_PYTHON "Build Python SWIG module" ON)
