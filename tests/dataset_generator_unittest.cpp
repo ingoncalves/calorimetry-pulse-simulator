@@ -80,6 +80,7 @@ TEST(DatasetGenerator, GenerateContinuousDataset) {
 
   unsigned int nEvents = 100;
   auto dataset = datasetGenerator.GenerateContinuousDataset(nEvents);
+  EXPECT_EQ(dataset->time.size(), nEvents);
   EXPECT_EQ(dataset->samples.size(), nEvents);
   EXPECT_EQ(dataset->amplitudes.size(), nEvents);
   EXPECT_EQ(dataset->phases.size(), nEvents);
@@ -97,6 +98,7 @@ TEST(DatasetGenerator, EventScheme) {
 
   unsigned int nEvents = 100;
   auto dataset = datasetGenerator.GenerateContinuousDataset(nEvents);
+  EXPECT_EQ(dataset->time.size(), nEvents);
   EXPECT_EQ(dataset->samples.size(), nEvents);
   EXPECT_EQ(dataset->amplitudes.size(), nEvents);
   EXPECT_EQ(dataset->phases.size(), nEvents);
@@ -118,6 +120,8 @@ TEST(DatasetGenerator, GenerateSlicedDataset) {
   unsigned int nSlices = 100;
   unsigned int sliceSize = 7;
   auto dataset = datasetGenerator.GenerateSlicedDataset(nSlices, sliceSize);
+  EXPECT_EQ(dataset->time.size(), nSlices);
+  EXPECT_EQ(dataset->time[0].size(), sliceSize);
   EXPECT_EQ(dataset->samples.size(), nSlices);
   EXPECT_EQ(dataset->samples[0].size(), sliceSize);
   EXPECT_EQ(dataset->amplitudes.size(), nSlices);
