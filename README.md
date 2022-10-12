@@ -46,10 +46,31 @@ You are now ready to use the CPS lib in C++ and Python applications.
 Find **C++**, and **Python**, and CERN **ROOT** examples at `docs/examples/` folder.
 
 
+## Cite
+
+Please, cite this project using the following reference:
+
+> GONÇALVES, Guilherme Inácio et al. Performance of Optimal Linear Filtering Methods for Signal Estimation in High-Energy Calorimetry. Journal of Control, Automation and Electrical Systems, p. 1-11, 2022.
+
+Or, using bibtex format:
+
+```bib
+@article{gonccalves2022performance,
+  title={Performance of Optimal Linear Filtering Methods for Signal Estimation in High-Energy Calorimetry},
+  author={Gon{\c{c}}alves, Guilherme In{\'a}cio and Peralva, Bernardo Sotto-Maior and de Seixas, Jos{\'e} Manoel and de Andrade Filho, Luciano Manh{\~a}es and Cerqueira, Augusto Santiago},
+  journal={Journal of Control, Automation and Electrical Systems},
+  pages={1--11},
+  year={2022},
+  publisher={Springer}
+}
+```
+
+Link to the paper: https://link.springer.com/article/10.1007/s40313-022-00907-0
+
+
 ## Development
 
 Below is some useful information for developers.
-
 
 ### Tests
 
