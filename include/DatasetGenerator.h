@@ -102,17 +102,18 @@ class DatasetGenerator
     virtual ~DatasetGenerator() = default; //!< Destructor
 
     // getters
-    double                GetNoiseMean() const { return m_noiseMean; } //!< Returns the mean of the noise
-    double                GetNoiseStdDev() const { return m_noiseStdDev; } //!< Returns the standard deviation of the noise
-    double                GetSamplingRate() const { return m_samplingRate; } //!< Returns the sampling rate
-    double                GetOccupancy() const { return m_occupancy; } //!< Returns the occupancy
-    const PulseGenerator* GetPulseGenerator() const { return m_pulseGenerator; } //!< Returns the pulse generator
+    double                   GetNoiseMean() const { return m_noiseMean; } //!< Returns the mean of the noise
+    double                   GetNoiseStdDev() const { return m_noiseStdDev; } //!< Returns the standard deviation of the noise
+    double                   GetSamplingRate() const { return m_samplingRate; } //!< Returns the sampling rate
+    double                   GetOccupancy() const { return m_occupancy; } //!< Returns the occupancy
+    const PulseGenerator*    GetPulseGenerator() const { return m_pulseGenerator; } //!< Returns the pulse generator
     // setters
-    DatasetGenerator&        SetPulseGenerator(const PulseGenerator * pulseGenerator); //!< Sets the pulse generator
-    DatasetGenerator&        SetNoiseParams(double noiseMean, double noiseStdDev); //!< Sets the noise parameters
-    DatasetGenerator&        SetSamplingRate(double samplingRate); //!< Sets the sampling rate
-    DatasetGenerator&        SetOccupancy(double occupancy); //!< Sets the occupancy
-    DatasetGenerator&        SetEventsScheme(std::vector<EventSchemeBlock> eventsScheme); //!< Sets the events scheme
+    void                     SetPulseGenerator(const PulseGenerator * pulseGenerator); //!< Sets the pulse generator
+    void                     SetNoiseParams(double noiseMean, double noiseStdDev); //!< Sets the noise parameters
+    void                     SetSamplingRate(double samplingRate); //!< Sets the sampling rate
+    void                     SetOccupancy(double occupancy); //!< Sets the occupancy
+    void                     SetEventsScheme(std::vector<EventSchemeBlock> eventsScheme); //!< Sets the events scheme
+    // methods
     const ContinuousDataset* GenerateContinuousDataset(unsigned int nEvents) const; //!< Generates a continuous dataset
     const SlicedDataset*     GenerateSlicedDataset(unsigned int nSlices, unsigned int sliceSize) const; //!< Generates a sliced dataset
 

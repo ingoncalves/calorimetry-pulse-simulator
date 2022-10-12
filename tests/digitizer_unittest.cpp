@@ -35,7 +35,8 @@ TEST(Digitizer, NSamples) {
   EXPECT_EQ(digitizer.GetNSamples(), 0);
   // new value
   unsigned int nSamples = 7;
-  EXPECT_EQ(digitizer.SetNSamples(nSamples).GetNSamples(), nSamples);
+  digitizer.SetNSamples(nSamples);
+  EXPECT_EQ(digitizer.GetNSamples(), nSamples);
 }
 
 TEST(Digitizer, SamplingRate) {
@@ -44,7 +45,8 @@ TEST(Digitizer, SamplingRate) {
   EXPECT_EQ(digitizer.GetSamplingRate(), 0.0);
   // new value
   double samplingRate = 25.0;
-  EXPECT_EQ(digitizer.SetSamplingRate(samplingRate).GetSamplingRate(), samplingRate);
+  digitizer.SetSamplingRate(samplingRate);
+  EXPECT_EQ(digitizer.GetSamplingRate(), samplingRate);
 }
 
 TEST(Digitizer, StartSamplingAtTime) {
@@ -53,7 +55,8 @@ TEST(Digitizer, StartSamplingAtTime) {
   EXPECT_EQ(digitizer.GetStartSamplingAtTime(), 0.0);
   // new value
   double startSampligAtTime = -25.0;
-  EXPECT_EQ(digitizer.SetStartSamplingAtTime(startSampligAtTime).GetStartSamplingAtTime(), startSampligAtTime);
+  digitizer.SetStartSamplingAtTime(startSampligAtTime);
+  EXPECT_EQ(digitizer.GetStartSamplingAtTime(), startSampligAtTime);
 }
 
 TEST(Digitizer, Digitize) {

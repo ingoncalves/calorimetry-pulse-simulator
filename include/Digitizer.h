@@ -48,9 +48,9 @@ class Digitizer : public IDigitizer
     double       GetSamplingRate() const { return m_samplingRate; } //!< Returns the sampling rate
     double       GetStartSamplingAtTime() const { return m_startSamplingAtTime; } //!< Returns the time at which digitization will begin
     // setters
-    Digitizer& SetNSamples(unsigned int nSamples); //!< Sets the number of samples
-    Digitizer& SetSamplingRate(double samplingRate); //!< Sets the sampling rate
-    Digitizer& SetStartSamplingAtTime(double startSamplingAtTime); //!< Sets the time at which digitization will begin
+    void         SetNSamples(unsigned int nSamples); //!< Sets the number of samples
+    void         SetSamplingRate(double samplingRate); //!< Sets the sampling rate
+    void         SetStartSamplingAtTime(double startSamplingAtTime); //!< Sets the time at which digitization will begin
 
   private:
     unsigned int m_nSamples; //!< The number of samples to be generated

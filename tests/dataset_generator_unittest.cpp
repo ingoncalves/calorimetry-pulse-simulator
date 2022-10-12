@@ -35,7 +35,8 @@ TEST(DatasetGenerator, PulseGenerator) {
   // new value
   const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
   const PulseGenerator* pulseGenerator = new PulseGenerator(pulseShape);
-  EXPECT_EQ(datasetGenerator.SetPulseGenerator(pulseGenerator).GetPulseGenerator(), pulseGenerator);
+  datasetGenerator.SetPulseGenerator(pulseGenerator);
+  EXPECT_EQ(datasetGenerator.GetPulseGenerator(), pulseGenerator);
 }
 
 TEST(DatasetGenerator, NoiseParams) {
@@ -57,7 +58,8 @@ TEST(DatasetGenerator, SamplingRate) {
   EXPECT_EQ(datasetGenerator.GetSamplingRate(), 0.0);
   // new value
   double samplingRate = 25.0;
-  EXPECT_EQ(datasetGenerator.SetSamplingRate(samplingRate).GetSamplingRate(), samplingRate);
+  datasetGenerator.SetSamplingRate(samplingRate);
+  EXPECT_EQ(datasetGenerator.GetSamplingRate(), samplingRate);
 }
 
 TEST(DatasetGenerator, Occupancy) {
@@ -66,17 +68,18 @@ TEST(DatasetGenerator, Occupancy) {
   EXPECT_EQ(datasetGenerator.GetOccupancy(), 0.0);
   // new value
   double occupancy = 0.5;
-  EXPECT_EQ(datasetGenerator.SetOccupancy(occupancy).GetOccupancy(), occupancy);
+  datasetGenerator.SetOccupancy(occupancy);
+  EXPECT_EQ(datasetGenerator.GetOccupancy(), occupancy);
 }
 
 TEST(DatasetGenerator, GenerateContinuousDataset) {
   const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
   const PulseGenerator* pulseGenerator = new PulseGenerator(pulseShape);
-  DatasetGenerator datasetGenerator = DatasetGenerator()
-    .SetSamplingRate(25.0)
-    .SetOccupancy(0.05)
-    .SetNoiseParams(0, 0)
-    .SetPulseGenerator(pulseGenerator);
+  DatasetGenerator datasetGenerator = DatasetGenerator();
+  datasetGenerator.SetSamplingRate(25.0);
+  datasetGenerator.SetOccupancy(0.05);
+  datasetGenerator.SetNoiseParams(0, 0);
+  datasetGenerator.SetPulseGenerator(pulseGenerator);
 
   unsigned int nEvents = 100;
   auto dataset = datasetGenerator.GenerateContinuousDataset(nEvents);
@@ -89,12 +92,12 @@ TEST(DatasetGenerator, GenerateContinuousDataset) {
 TEST(DatasetGenerator, EventScheme) {
   const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
   const PulseGenerator* pulseGenerator = new PulseGenerator(pulseShape);
-  DatasetGenerator datasetGenerator = DatasetGenerator()
-    .SetSamplingRate(25.0)
-    .SetOccupancy(1.0)
-    .SetNoiseParams(0, 0)
-    .SetPulseGenerator(pulseGenerator)
-    .SetEventsScheme({ DatasetGenerator::AllowedEventsBlock(5), DatasetGenerator::NotAllowedEventsBlock(25) });
+  DatasetGenerator datasetGenerator = DatasetGenerator();
+  datasetGenerator.SetSamplingRate(25.0);
+  datasetGenerator.SetOccupancy(1.0);
+  datasetGenerator.SetNoiseParams(0, 0);
+  datasetGenerator.SetPulseGenerator(pulseGenerator);
+  datasetGenerator.SetEventsScheme({ DatasetGenerator::AllowedEventsBlock(5), DatasetGenerator::NotAllowedEventsBlock(25) });
 
   unsigned int nEvents = 100;
   auto dataset = datasetGenerator.GenerateContinuousDataset(nEvents);
@@ -111,11 +114,11 @@ TEST(DatasetGenerator, EventScheme) {
 TEST(DatasetGenerator, GenerateSlicedDataset) {
   const TextFilePulseShape* pulseShape = new TextFilePulseShape(PULSE_SHAPE_FILE_PATH);
   const PulseGenerator* pulseGenerator = new PulseGenerator(pulseShape);
-  DatasetGenerator datasetGenerator = DatasetGenerator()
-    .SetSamplingRate(25.0)
-    .SetOccupancy(0.05)
-    .SetNoiseParams(0, 0)
-    .SetPulseGenerator(pulseGenerator);
+  DatasetGenerator datasetGenerator = DatasetGenerator();
+  datasetGenerator.SetSamplingRate(25.0);
+  datasetGenerator.SetOccupancy(0.05);
+  datasetGenerator.SetNoiseParams(0, 0);
+  datasetGenerator.SetPulseGenerator(pulseGenerator);
 
   unsigned int nSlices = 100;
   unsigned int sliceSize = 7;

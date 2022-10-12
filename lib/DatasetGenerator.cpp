@@ -32,30 +32,25 @@ DatasetGenerator::DatasetGenerator() :
   m_eventsScheme()
 {}
 
-DatasetGenerator& DatasetGenerator::SetSamplingRate(double samplingRate) {
+void DatasetGenerator::SetSamplingRate(double samplingRate) {
   m_samplingRate = samplingRate;
-  return *this;
 }
 
-DatasetGenerator& DatasetGenerator::SetOccupancy(double occupancy) {
+void DatasetGenerator::SetOccupancy(double occupancy) {
   m_occupancy = occupancy;
-  return *this;
 }
 
-DatasetGenerator& DatasetGenerator::SetNoiseParams(double noiseMean, double noiseStdDev) {
+void DatasetGenerator::SetNoiseParams(double noiseMean, double noiseStdDev) {
   m_noiseMean = noiseMean;
   m_noiseStdDev = noiseStdDev;
-  return *this;
 }
 
-DatasetGenerator& DatasetGenerator::SetPulseGenerator(const PulseGenerator* pulseGenerator) {
+void DatasetGenerator::SetPulseGenerator(const PulseGenerator* pulseGenerator) {
   m_pulseGenerator = pulseGenerator;
-  return *this;
 }
 
-DatasetGenerator& DatasetGenerator::SetEventsScheme(std::vector<EventSchemeBlock> eventsScheme) {
+void DatasetGenerator::SetEventsScheme(std::vector<EventSchemeBlock> eventsScheme) {
   m_eventsScheme = eventsScheme;
-  return *this;
 }
 
 const ContinuousDataset* DatasetGenerator::GenerateContinuousDataset(unsigned int nEvents) const {
