@@ -1,2 +1,2 @@
 all:
-	g++ main.cpp -o main -w -lcps
+	g++ -std=c++17 main.cpp -o main -w -lcps
