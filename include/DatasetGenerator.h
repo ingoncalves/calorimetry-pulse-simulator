@@ -131,7 +131,6 @@ class DatasetGenerator
     double m_noiseMean; //!< The mean of the gaussian noise
     double m_noiseStdDev; //!< The standard deviation of the gaussian noise
     std::vector<EventSchemeBlock> m_eventsScheme; //!< The events scheme
-    mutable std::default_random_engine m_randomEngine; //!< The random engine
 
     const std::vector<AnalogPulse*> GenerateEvents(unsigned int nEvents) const; //!< Generates a vector of events
     const ContinuousDataset* SampleEvents(std::vector<AnalogPulse*> pulses) const; //!< Samples a vector of events

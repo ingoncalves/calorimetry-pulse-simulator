@@ -82,7 +82,6 @@ class PulseGenerator
     std::vector<double> m_amplitudeDistributionParams; //!< The amplitude distribution parameters
     RandomDistribution m_phaseDistribution; //!< The phase distribution type
     std::vector<double> m_phaseDistributionParams; //!< The phase distribution parameters
-    mutable std::default_random_engine m_generator; //!< The random number generator
 
     double GenerateRandomNumber(RandomDistribution distribution, const std::vector<double> & params) const; //!< Generates a random number according to the given distribution and parameters
   };
