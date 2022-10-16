@@ -53,7 +53,8 @@ Find **C++**, and **Python**, and CERN **ROOT** examples at `docs/examples/` fol
 
 ![Analog Pulses Example](docs/images/analog-pulse-example.png "Analog Pulses")
 
-#### Python example
+<details>
+<summary>Python example</summary>
 
 ```python
 from pycps import AnalogPulse, TextFilePulseShape, Digitizer
@@ -86,8 +87,11 @@ noisy_and_phased_pulse = AnalogPulse(
 )
 noisy_and_phased_samples = digitizer.digitize(noisy_and_phased_pulse)
 ```
+</details>
 
-#### C++ example
+<details>
+<summary>C++ example</summary>
+
 ```cpp
 #include <cps/TextFilePulseShape.h>
 #include <cps/AnalogPulse.h>
@@ -123,12 +127,14 @@ AnalogPulse* noisyAndPhasedPulse = new AnalogPulse(
   );
 std::vector<double> noisyAndPhasedSamples = digitizer->Digitize(noisyAndPhasedPulse);
 ```
+</details>
 
 ### Pulses and Dataset generation
 
 ![Continuous Dataset Example](docs/images/continuous-dataset-example.png "Continuous Dataset")
 
-#### Python example
+<details>
+<summary>Python example</summary>
 
 ```python
 import numpy as np
@@ -173,8 +179,10 @@ time = np.array(dataset.time)
 samples = np.array(dataset.samples)
 amplitudes = np.array(dataset.amplitudes)
 ```
+</details>
 
-#### C++ example
+<details>
+<summary>C++ example</summary>
 
 You must compile with C++17 standard (ex: `g++ -std=c++17 main.cpp -o main -w -lcps`).
 
@@ -232,6 +240,7 @@ std::vector<std::vector<double>> amplitudes = dataset->amplitudes;
 return 0;
 }
 ```
+</details>
 
 
 ## Cite
