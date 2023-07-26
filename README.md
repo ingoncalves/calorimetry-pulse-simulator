@@ -10,8 +10,12 @@ Useful links:
 
 ## Getting started
 
-Please, follow the instructions for Unix based SO. Requires
-[SWIG](http://www.swig.org), and [CMake](https://cmake.org) version 3.8.
+Please, follow the instructions for Unix based SO. Requires:
+
+- G++
+- Make
+- [CMake](https://cmake.org) version 3.10 or higher
+- [SWIG](http://www.swig.org) version 4 (only if you want to build the Python package)
 
 1. Create a build directory and make it the current directory
 
