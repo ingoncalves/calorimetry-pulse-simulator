@@ -69,6 +69,7 @@ class DatasetGenerator(unittest.TestCase):
         self.assertEqual(dataset.samples.size(), n_events)
         self.assertEqual(dataset.amplitudes.size(), n_events)
         self.assertEqual(dataset.phases.size(), n_events)
+        self.assertEqual(dataset.noise.size(), n_events)
 
 
     def test_sliced_dataset(self):
@@ -92,6 +93,8 @@ class DatasetGenerator(unittest.TestCase):
         self.assertEqual(dataset.amplitudes[0].size(), slice_size)
         self.assertEqual(dataset.phases.size(), n_slices)
         self.assertEqual(dataset.phases[0].size(), slice_size)
+        self.assertEqual(dataset.noise.size(), n_slices)
+        self.assertEqual(dataset.noise[0].size(), slice_size)
 
 
 if __name__ == '__main__':

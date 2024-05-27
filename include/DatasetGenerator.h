@@ -39,36 +39,38 @@ class DatasetGenerator;
  * @struct ContinuousDataset
  * @brief A struct that contains a continuous dataset.
  *
- * This struct contains a continuous dataset. The dataset is composed of three
- * vectors: the samples vector, the ampltitudes vector, and the phases vector.
- * The samples vector contains the sample coordinate of the signal at a given
- * index. The amplitude vector contains the truth amplitude value at a given
- * index, and the phase vector contains the truth phase value at a given index.
+ * This struct contains a continuous dataset. The dataset is composed of the
+ * following vectors:
+ *   - time: the time coordinate of the signal at a given index;
+ *   - samples: the sample coordinate of the signal at a given index plus the noise;
+ *   - amplitudes: the truth amplitude value at a given index;
+ *   - phases: the truth phase value at a given index;
+ *   - noise: the background noise;
  */
 struct ContinuousDataset {
   std::vector<double> time; //!< The time series of the dataset
   std::vector<double> samples; //!< The samples of the dataset
   std::vector<double> amplitudes; //!< The amplitudes of the pulses in the dataset
   std::vector<double> phases; //!< The phases of the pulses in the dataset
+  std::vector<double> noise; //!< The background noise in the dataset
 };
 
 /**
  * @struct SlicedDataset
  * @brief A struct that contains a sliced dataset.
  *
- * This struct contains a sliced dataset. The dataset is composed of three
- * matrices: the samples matrix, the ampltitudes matrix, and the phases matrix.
+ * This struct contains a sliced dataset. The dataset is composed of the following
+ * matrices: time, samples, ampltitudes, phases, and noise.
  * Each matrix has a number of rows equal to the number of pulses in the
- * dataset, and a number of columns equal to the slice size. The samples matix
- * contains the sample coordinate of the signal at a given window index. The
- * amplitude vector contains the truth amplitude value at a given window index,
- * and the phase vector contains the truth phase value at a given window index.
- */
+ * dataset, and a number of columns equal to the slice size. Please, refer to the
+ * ContinuousDataset struct for more information about the dataset.
+ * */
 struct SlicedDataset {
   std::vector<std::vector<double>> time;
   std::vector<std::vector<double>> samples;
   std::vector<std::vector<double>> amplitudes;
   std::vector<std::vector<double>> phases;
+  std::vector<std::vector<double>> noise;
 };
 
 /**
