@@ -36,3 +36,4 @@ build
 .vim
 __pycache__
 .DS_Store
+.venv
