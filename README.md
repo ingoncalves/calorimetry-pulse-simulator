@@ -1,5 +1,8 @@
 # CPS - Calorimetry Pulse Simulator
 
+[![GitHub version](https://badge.fury.io/gh/ingoncalves%2Fcalorimetry-pulse-simulator.svg)](https://badge.fury.io/gh/ingoncalves%2Fcalorimetry-pulse-simulator)
+[![GPLv3 License](https://img.shields.io/badge/License-GPL%20v3-yellow.svg)](https://opensource.org/licenses/)
+
 Set of functions in C++ and Python for generating typical analog and digital
 calorimetry signals with the ability to simulate phenomena such as electronic
 noise, signal pileup, phase shift, baseline, among others.
