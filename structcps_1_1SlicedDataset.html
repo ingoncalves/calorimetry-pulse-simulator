@@ -94,10 +94,13 @@ std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRig
 <tr class="memitem:ac65d1d81d43e5a6391a3068a4f3847ed"><td class="memItemLeft" align="right" valign="top"><a id="ac65d1d81d43e5a6391a3068a4f3847ed"></a>
 std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>phases</b></td></tr>
 <tr class="separator:ac65d1d81d43e5a6391a3068a4f3847ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad27d71077ba9a8716c609bfb6dd95442"><td class="memItemLeft" align="right" valign="top"><a id="ad27d71077ba9a8716c609bfb6dd95442"></a>
+std::vector&lt; std::vector&lt; double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>noise</b></td></tr>
+<tr class="separator:ad27d71077ba9a8716c609bfb6dd95442"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>A struct that contains a sliced dataset. </p>
-<p>This struct contains a sliced dataset. The dataset is composed of three matrices: the samples matrix, the ampltitudes matrix, and the phases matrix. Each matrix has a number of rows equal to the number of pulses in the dataset, and a number of columns equal to the slice size. The samples matix contains the sample coordinate of the signal at a given window index. The amplitude vector contains the truth amplitude value at a given window index, and the phase vector contains the truth phase value at a given window index. </p>
+<p>This struct contains a sliced dataset. The dataset is composed of the following matrices: time, samples, ampltitudes, phases, and noise. Each matrix has a number of rows equal to the number of pulses in the dataset, and a number of columns equal to the slice size. Please, refer to the <a class="el" href="structcps_1_1ContinuousDataset.html" title="A struct that contains a continuous dataset.">ContinuousDataset</a> struct for more information about the dataset. </p>
 </div><hr/>The documentation for this struct was generated from the following file:<ul>
 <li>/home/runner/work/calorimetry-pulse-simulator/calorimetry-pulse-simulator/include/<a class="el" href="DatasetGenerator_8h_source.html">DatasetGenerator.h</a></li>
 </ul>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['samples_184',['samples',['../structcps_1_1ContinuousDataset.html#a00ed8173c4be4b04687d8214bb3a599e',1,'cps::ContinuousDataset']]]
+  ['phases_185',['phases',['../structcps_1_1ContinuousDataset.html#ae77948058bc57a4e71c6e8a2114eaadb',1,'cps::ContinuousDataset']]]
 ];
