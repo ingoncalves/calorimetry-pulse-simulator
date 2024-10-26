@@ -66,26 +66,30 @@ const SlicedDataset* DatasetGenerator::GenerateSlicedDataset(unsigned int nSlice
   std::vector<std::vector<double>> slicedSamples(nSlices);
   std::vector<std::vector<double>> slicedAmpltiudes(nSlices);
   std::vector<std::vector<double>> slicedPhases(nSlices);
+  std::vector<std::vector<double>> slicedNoise(nSlices);
 
   for (unsigned int i = 0; i < nSlices; i++) {
     std::vector<double> time(sliceSize);
     std::vector<double> samples(sliceSize);
     std::vector<double> amplitudes(sliceSize);
     std::vector<double> phases(sliceSize);
+    std::vector<double> noise(sliceSize);
     for (unsigned int j = 0; j < sliceSize; j++) {
       time[j] = continuousDataset->time[i * sliceSize + j];
       samples[j] = continuousDataset->samples[i * sliceSize + j];
       amplitudes[j] = continuousDataset->amplitudes[i * sliceSize + j];
       phases[j] = continuousDataset->phases[i * sliceSize + j];
+      noise[j] = continuousDataset->noise[i * sliceSize + j];
     }
     slicedTime[i] = time;
     slicedSamples[i] = samples;
     slicedAmpltiudes[i] = amplitudes;
     slicedPhases[i] = phases;
+    slicedNoise[i] = noise;
   }
 
   delete continuousDataset;
-  return new SlicedDataset { slicedTime, slicedSamples, slicedAmpltiudes, slicedPhases };
+  return new SlicedDataset { slicedTime, slicedSamples, slicedAmpltiudes, slicedPhases, slicedNoise };
 }
 
 const std::vector<AnalogPulse*> DatasetGenerator::GenerateEvents(unsigned int nEvents) const {
@@ -123,12 +127,15 @@ const ContinuousDataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*
   std::vector<double> samples(nEvents, m_pulseGenerator->GetPedestal());
   std::vector<double> amplitudes(nEvents, 0);
   std::vector<double> phases(nEvents, 0);
+  std::vector<double> noise(nEvents, 0);
 
   for (unsigned int n = 0; n < nEvents; n++) {
     double currentTime = n * m_samplingRate;
+    double backgroundNoise = GenerateNoise();
 
     time[n] = currentTime;
-    samples[n] += GenerateNoise();
+    noise[n] = backgroundNoise;
+    samples[n] += backgroundNoise;
 
     auto pulse = pulses[n];
     if (!pulse) continue;
@@ -156,6 +163,7 @@ const ContinuousDataset* DatasetGenerator::SampleEvents(std::vector<AnalogPulse*
     samples = samples,
     amplitudes = amplitudes,
     phases = phases,
+    noise = noise,
   };
 }
 

@@ -17,6 +17,7 @@
  * You should have received a copy of the GNU General Public License along with
  * CPS. If not, see <https://www.gnu.org/licenses/>.
  */
+#include <iomanip>
 #include <gtest/gtest.h>
 #include "TextFilePulseShape.h"
 #include "PulseGenerator.h"
@@ -27,6 +28,24 @@
 #endif
 
 using namespace cps;
+
+void PrintDataset(const ContinuousDataset* dataset) {
+  std::cout <<
+    std::setw(15) << "time" <<
+    std::setw(15) << "sample" <<
+    std::setw(15) << "amplitude" <<
+    std::setw(15) << "phase" <<
+    std::setw(15) << "noise" << std::endl;
+
+  for (int i = 0; i < dataset->time.size(); i++) {
+    std::cout <<
+      std::setw(15) << dataset->time[i] <<
+      std::setw(15) << dataset->samples[i] <<
+      std::setw(15) << dataset->amplitudes[i] <<
+      std::setw(15) << dataset->phases[i] <<
+      std::setw(15) << dataset->noise[i] << std::endl;
+  }
+}
 
 TEST(DatasetGenerator, PulseGenerator) {
   DatasetGenerator datasetGenerator;
@@ -78,7 +97,7 @@ TEST(DatasetGenerator, GenerateContinuousDataset) {
   DatasetGenerator datasetGenerator = DatasetGenerator();
   datasetGenerator.SetSamplingRate(25.0);
   datasetGenerator.SetOccupancy(0.05);
-  datasetGenerator.SetNoiseParams(0, 0);
+  datasetGenerator.SetNoiseParams(0, 0.5);
   datasetGenerator.SetPulseGenerator(pulseGenerator);
 
   unsigned int nEvents = 100;
@@ -87,6 +106,9 @@ TEST(DatasetGenerator, GenerateContinuousDataset) {
   EXPECT_EQ(dataset->samples.size(), nEvents);
   EXPECT_EQ(dataset->amplitudes.size(), nEvents);
   EXPECT_EQ(dataset->phases.size(), nEvents);
+  EXPECT_EQ(dataset->noise.size(), nEvents);
+
+  PrintDataset(dataset);
 }
 
 TEST(DatasetGenerator, EventScheme) {
@@ -95,7 +117,7 @@ TEST(DatasetGenerator, EventScheme) {
   DatasetGenerator datasetGenerator = DatasetGenerator();
   datasetGenerator.SetSamplingRate(25.0);
   datasetGenerator.SetOccupancy(1.0);
-  datasetGenerator.SetNoiseParams(0, 0);
+  datasetGenerator.SetNoiseParams(0, 0.5);
   datasetGenerator.SetPulseGenerator(pulseGenerator);
   datasetGenerator.SetEventsScheme({ DatasetGenerator::AllowedEventsBlock(5), DatasetGenerator::NotAllowedEventsBlock(25) });
 
@@ -105,10 +127,9 @@ TEST(DatasetGenerator, EventScheme) {
   EXPECT_EQ(dataset->samples.size(), nEvents);
   EXPECT_EQ(dataset->amplitudes.size(), nEvents);
   EXPECT_EQ(dataset->phases.size(), nEvents);
+  EXPECT_EQ(dataset->noise.size(), nEvents);
 
-  for (int i = 0; i < nEvents; i++) {
-    std::cout << dataset->samples[i] << "\t" << dataset->amplitudes[i] << std::endl;
-  }
+  PrintDataset(dataset);
 }
 
 TEST(DatasetGenerator, GenerateSlicedDataset) {
@@ -131,4 +152,6 @@ TEST(DatasetGenerator, GenerateSlicedDataset) {
   EXPECT_EQ(dataset->amplitudes[0].size(), sliceSize);
   EXPECT_EQ(dataset->phases.size(), nSlices);
   EXPECT_EQ(dataset->phases[0].size(), sliceSize);
+  EXPECT_EQ(dataset->noise.size(), nSlices);
+  EXPECT_EQ(dataset->noise[0].size(), sliceSize);
 }
