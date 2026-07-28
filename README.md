@@ -254,22 +254,23 @@ return 0;
 
 Please, cite this project using the following reference:
 
-> GONÇALVES, Guilherme Inácio et al. Performance of Optimal Linear Filtering Methods for Signal Estimation in High-Energy Calorimetry. Journal of Control, Automation and Electrical Systems, p. 1-11, 2022.
+> GONÇALVES, Guilherme Inácio. Signal estimation for high energy calorimeter systems operating in high luminosity conditions. Universidade do Estado do Rio de Janeiro, 2026.
 
 Or, using bibtex format:
 
 ```bib
-@article{gonccalves2022performance,
-  title={Performance of Optimal Linear Filtering Methods for Signal Estimation in High-Energy Calorimetry},
-  author={Gon{\c{c}}alves, Guilherme In{\'a}cio and Peralva, Bernardo Sotto-Maior and de Seixas, Jos{\'e} Manoel and de Andrade Filho, Luciano Manh{\~a}es and Cerqueira, Augusto Santiago},
-  journal={Journal of Control, Automation and Electrical Systems},
-  pages={1--11},
-  year={2022},
-  publisher={Springer}
+@PHDTHESIS{2026:1446386874,
+ 	title = {Signal estimation for high energy calorimeter systems operating in high luminosity conditions},
+	author={Gon{\c{c}}alves, Guilherme In{\'a}cio},
+ 	year = {2026},
+ 	url = "http://www.bdtd.uerj.br/handle/1/25798",
+ 	publisher = {Universidade do Estado do Rio de Janeiro},
+ 	scholl = {Programa de Pós-Graduação em Modelagem Computacional},
+ 	note = {Centro de Tecnologia e Ciências::Instituto Politécnico}
 }
 ```
 
-Link to the paper: https://link.springer.com/article/10.1007/s40313-022-00907-0
+Link to the paper: http://www.bdtd.uerj.br/handle/1/25798
 
 
 ## Development
